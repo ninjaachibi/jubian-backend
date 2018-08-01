@@ -21,19 +21,38 @@ if (!process.env.MONGODB_URI) {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.post('/register', (req, res) => {
-    const newUser = new User({
-      username: req.body.username,
-      password: req.body.password
-    });
-    newUser.save()
-    .then(response => {
-      res.send(response);
-    })
-    .catch(error => {
-      res.send(error);
-    })
-  });
+app.post('/register', (req, res) => {
+  console.log('body', req.body);
+  User.findOne({username: req.body.username})
+  .then((user) => {
+    console.log('user', user);
+    if(user) {
+      res.json({
+        success: false,
+        message: "Username already exists!"
+      })
+    }
+    else {
+      const newUser = new User({
+        username: req.body.username,
+        password: req.body.password
+      });
+      newUser.save()
+      .then(user => {
+        res.json({
+          success: true,
+          message: `Successfully registered a new user: ${user.username}!`
+        });
+      })
+      .catch(error => {
+        res.json({
+          success: false,
+          message: `Error: ${error}`
+        });
+      })
+    }
+  })
+});
 
 app.post('/login',(req,res) =>{
   console.log('booty', req.body)
@@ -63,7 +82,7 @@ app.post('/login',(req,res) =>{
           //if authorization succeeds
           res.json({
             success: true,
-            user: user
+            userId: user._id
           })
         }
         });
