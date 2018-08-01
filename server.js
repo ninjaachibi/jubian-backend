@@ -8,6 +8,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const MongoStore = require('connect-mongo')(session);
 const app = express();
 const User = require('./models/user.js');
+const PORT = process.env.PORT||3000;
 
 if (!process.env.MONGODB_URI) {
     console.log('MONGODB_URI config failed');
@@ -77,7 +78,7 @@ app.use(function(req, res, next) {
   });
 
 
-const server = app.listen(3000, () => {
+const server = app.listen(PORT, () => {
   const { address, port } = server.address();
   console.log(`Listening at http://${port}`);
 })
