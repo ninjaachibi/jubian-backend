@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
+    "serve": "node dist/index.js",
     "babel-node": "babel-node --presets es2015,stage-0",
-    "start": "nodemon --exec npm run babel-node -- ./server.js"
+    "start": "nodemon --exec npm run babel-node -- ./server.js",
+    "script": "npm run babel-node scripts.js"
   },
   "author": "",
   "license": "ISC",
