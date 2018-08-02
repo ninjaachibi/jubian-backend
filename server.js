@@ -1,11 +1,6 @@
 const express = require ('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const MongoStore = require('connect-mongo')(session);
 const app = express();
 const User = require('./models/user.js');
 const PORT = process.env.PORT || 3000;
@@ -16,7 +11,9 @@ if (!process.env.MONGODB_URI) {
   }
   mongoose.Promise = global.Promise;
   mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-  mongoose.connection.on('error', console.error);
+  mongoose.connection.on('connected', function() {
+    console.log('Connected to MONGODB!');
+  })
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -99,5 +96,5 @@ app.use(function(req, res, next) {
 
 const server = app.listen(PORT, () => {
   const { address, port } = server.address();
-  console.log(`Listening at http://${port}`);
+  console.log(`Listening at http://localhost:${port}`);
 })
