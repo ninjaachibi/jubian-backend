@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -10,6 +9,8 @@ if (!process.env.MONGODB_URI) {
   console.log('MONGODB_URI config failed');
   process.exit(1);
 }
+
+import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.on('connected', function() {
