@@ -48,9 +48,9 @@ else if(process.argv[2] === "loadDatabase") {
         process.exit(-1);
       }
 
-      let path = process.argv[3];
+      let path = process.argv[3]; //path to the directory that we're reading from
 
-      let inventory = [];
+      let inventory = []; //the array of all items
 
       function readFiles(path, next, error) {
         fs.readdir(path, (err, filenames) => {
@@ -73,6 +73,19 @@ else if(process.argv[2] === "loadDatabase") {
 
       readFiles(path, (inventory) => {
         console.log('inventory of', inventory.length);
+        Promise.all(inventory.map((item) => {
+          console.log('item is',item);
+          return new GroceryItem({
+            name: item.ItemName,
+            price: item.Price,
+            description: item.Description,
+            imgURI: item.Pic_URL,
+            aisle: item.aisle
+          }).save()
+        }))
+        .then(items => {
+          console.log('items',items);
+        })
       }, (err) => {
         throw err;
       })
