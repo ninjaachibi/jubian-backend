@@ -1,0 +1,51 @@
+[
+{
+  "name": "Calbee Shrimp Chips, small",
+  "description": "A toasted light snack with a touch of shrimp. A delectable new snack made with tidbits of shrimp wheat flour and vegetable oil blended together and toasted to a golden crispy crunch.",
+  "price": "99",
+  "img-src": "https://www.99ranch.com/ul/products/1337/1643116-1_13800x800.png",
+  "aisle": "snacks"
+},
+{
+  "name": "Meiji Yan Yan Chocolate & Strawberry Biscuit",
+  "description": "Yan Yan are crispy biscuit sticks that you can dip in a delicious chocolate and strawberry flavoured cream. The new Yan Yan – oat added biscuit stick with yogurt cream caters for the health conscious kids that can continue to enjoy Yan Yan! Yan Yan’s come in great portable cardboard containers which make it easy to enjoy your treat anywhere anytime!",
+  "price": "119",
+  "img-src": "https://www.99ranch.com/ul/products/1429/1645709-1800x800.png",
+  "aisle": "snacks"
+},
+{
+  "name": "Taisun Black Glutinous Rice Congee",
+  "description": "Taisun Mixed Congee Black Glutinous Rice & Job's Tears is a nutritious dessert that is ready to be enjoyed right out the can.",
+  "price": "159",
+  "img-src": "https://www.99ranch.com/ul/products/1198/1624634-1_13%20(1)800x800.png",
+  "aisle": "snacks"
+},
+{
+  "name": "Taisun Mixed Congee",
+  "description": "Taisun Mixed Congee is a delicious dessert full of nutrients that can be enjoyed hot or cold.",
+  "price": "169",
+  "img-src": "https://www.99ranch.com/ul/products/1196/1624625-1_13%20(1)800x800.png",
+  "aisle": "snacks"
+},
+{
+  "name": "Nongshim Spicy Shrimp Crackers",
+  "description": "Spicy Shrimp Crackers are a spicier version of the Shrimp Cracker product.",
+  "price": "179",
+  "img-src": "https://www.99ranch.com/ul/products/1333/1643103-1_13800x800.png",
+  "aisle": "snacks"
+},
+{
+  "name": "AGV Okinawa Brown Eight Treasures Congee",
+  "description": "AGV Okinawa Brown Eight Treasures Deluxe Congee with Brown Sugar is great tasting dessert. Made with brown sugar and nutritious ingredients this dessert makes a refreshing snack anytime.",
+  "price": "209",
+  "img-src": "https://www.99ranch.com/ul/products/1195/1624615-1_13%20(1)800x800.png",
+  "aisle": "snacks"
+},
+{
+  "name": "Jin Jin Lychee Coconut Jelly",
+  "description": "Soft sweet lychee flavored jellies make an excellent treat.",
+  "price": "189",
+  "img-src": "https://www.99ranch.com/ul/products/1295/1641631-1_13800x800.png",
+  "aisle": "snacks"
+}
+]
