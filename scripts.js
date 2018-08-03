@@ -1,4 +1,6 @@
 import fs from 'fs';
+import mongoose from 'mongoose';
+import { User, GroceryItem } from './models/models'
 
 console.log(process.argv.length);
 
@@ -29,31 +31,69 @@ if(process.argv[2] === 'addProperty') {
 }
 
 else if(process.argv[2] === "loadDatabase") {
-  console.log('uploading to database');
-  if(process.argv.length < 4) {
-    console.log('need 4 arguments');
-    process.exit(-1);
+  if (!process.env.MONGODB_URI) {
+    console.log('MONGODB_URI config failed');
+    process.exit(1);
   }
 
-  let path = process.argv[3];
+  mongoose.Promise = global.Promise;
+  mongoose.connection.on('connected', function() {
+    console.log('Connected to MONGODB!');
+  })
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(
+    () => {
+      console.log('loading to database');
+      if(process.argv.length < 4) {
+        console.log('need 4 arguments');
+        process.exit(-1);
+      }
 
-  let inventory = [];
+      let path = process.argv[3]; //path to the directory that we're reading from
 
-  function readFiles(path, next, error) {
-    fs.readdir(path, function(err, filenames) {
-        // console.log(filenames);
+      let inventory = []; //the array of all items
 
-        for (var i=0; i<filenames.length; i++) {
-            console.log(path+'/'+filenames[i]);
-            const temp = require(path+'/'+filenames[i]);
-            temp.forEach((item)=>{
-              inventory.push(item)
-            })
-        }
-        console.log(`${inventory.length} items`);
-        // console.log(inventory);
-    });
-  }
+      function readFiles(path, next, error) {
+        fs.readdir(path, (err, filenames) => {
+            if(err) {
+              error(err);
+              return;
+            }
+
+            for (var i=0; i<filenames.length; i++) {
+                console.log(path+'/'+filenames[i]);
+                const temp = require(path+'/'+filenames[i]);
+                temp.forEach((item)=>{
+                  inventory.push(item)
+                })
+            }
+            console.log(`${inventory.length} items`);
+            next(inventory);
+        });
+      }
+
+      readFiles(path, (inventory) => {
+        console.log('inventory of', inventory.length);
+        Promise.all(inventory.map((item) => {
+          console.log('item is',item);
+          return new GroceryItem({
+            name: item.ItemName,
+            price: item.Price,
+            description: item.Description,
+            imgURI: item.Pic_URL,
+            aisle: item.aisle
+          }).save()
+        }))
+        .then(items => {
+          console.log('items',items);
+        })
+      }, (err) => {
+        throw err;
+      })
+    },
+    err => {console.log('ERROR',err)}
+  )
+
+
 }
 
 else {
