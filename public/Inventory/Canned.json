@@ -1,0 +1,128 @@
+﻿[
+	{
+		"ItemName": "Kimbo Chicken Broth",
+		"Price": "$ 0.99 / EA",
+		"Description": "Count on Kimbo Chicken Broth for all your soup and cooking needs. Exceptional, rich chicken taste guarantees the best outcome for whatever recipe you have on hand!",
+		"Pic_URL": "https://www.99ranch.com/ul/products/2231/3608689_1%20(1).jpg"
+	},
+	{
+		"ItemName": "Ligo Sardines In Tomato Sauce",
+		"Price": "$ 1.09 / EA",
+		"Description": "Canned sardines in tomato sauce is a Philippine local's favorite for its savory taste and convenience. Although you can serve it straight from the can some people prefer to saute it with onions others enjoy it with Filipino noodles.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1467/1653104-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Ligo Sardines In Chili Tomato Sauce",
+		"Price": "$ 1.09 / EA",
+		"Description": "Ligo Sardines in Tomato Sauce is a great souce of calcium and protein. These delicious sardines can be enjoyed out of the can or used as an ingredient to make delicious dishes.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1468/1653105-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Masagana Sardines In Regular Tomato Sauce",
+		"Price": "$ 1.19 / EA",
+		"Description": "Masagana Sardines in Tomato sauce has terrific flavor. Enjoy right out of the can sauteed with mushroom or as an ingredient for a delicious dish!",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1482/1653475-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Sun Voi Coconut Milk",
+		"Price": "$ 1.39 / EA",
+		"Description": "Sunvoi coconut milk is a good partner for making curry, it can make curry tasting more smooth. It's also a good partner making dessert too. Make your own curry and dessert today!",
+		"Pic_URL": "https://www.99ranch.com/img/CMSImages/1620089.jpg"
+	},
+	{
+		"ItemName": "TAISUN MUNG BEAN SOUP",
+		"Price": "$ 1.49 / EA",
+		"Description": "Whether a quick grab and go in the morning as breakfast or a quick pick me up as an afternoon snack, Taisun Mung Bean Soup is refreshing and cooling for a filling, healthy treat.",
+		"Pic_URL": "https://www.99ranch.com/img/CMSImages/1624629f.jpg"
+	},
+	{
+		"ItemName": "Taisun Black Glutinous Rice Congee",
+		"Price": "$ 1.59 / EA ",
+		"Description": "Taisun Mixed Congee Black Glutinous Rice & Job's Tears is a nutritious dessert that is ready to be enjoyed right out the can.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1198/1624634-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Taisun Black Bean Sesame Mix Congee",
+		"Price": "$ 1.59 / EA",
+		"Description": "This nutritious Chinese congee is rich with black beans and sesame flavor. Enjoy either hot or cold.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1199/1624635-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "TAISUN MIXED GRAIN CEREAL",
+		"Price": "$ 1.59 / EA",
+		"Description": "Perfect as part of a complete breakfast or as a snack on the go, Taisun Mixed Grain Cereal is delicious yet filling to keep you fueled at 100%.",
+		"Pic_URL": "https://www.99ranch.com/img/CMSImages/2003379F.jpg"
+	},
+	{
+		"ItemName": "Ve Wong Chinese Mixed Porridge",
+		"Price": "$ 1.69 / EA",
+		"Description": "Ve Wong Mixed Porridge is a nutritious dessert that can be enjoyed hot or cold.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1200/1624636-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Taisun Mixed Congee",
+		"Price": "$ 1.69 / EA",
+		"Description": "Taisun Mixed Congee is a delicious dessert full of nutrients that can be enjoyed hot or cold.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1196/1624625-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Taisun Peanut Soup",
+		"Price": "$ 1.79 / EA",
+		"Description": "Taisun Peanut Soup dessert is a traditional Taiwanese dessert. This delicious dessert can be enjoyed hot or cold.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1197/1624626-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "AGV Deluxe Grass Jelly Dessert",
+		"Price": "$ 1.79 / EA",
+		"Description": "AGV Deluxe Grass Jelly Dessert is a delicious traditional Taiwanese grass jelly dessert with mixed nuts. Enjoy this dessert hot or cold.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1190/1624603-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "AGV Neo Neo Red Bean With Jelly",
+		"Price": "$ 1.79 / EA",
+		"Description": "This red bean jelly dessert is a delicious traditional Taiwanese jelly dessert with authentic red bean flavor.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1191/1624604-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "AGV Neo Neo Pearls",
+		"Price": "$ 1.79 / EA",
+		"Description": "AGV Traditional Pearl Sago in Syrup is a sweet refreshing dessert. Simply open and enjoy pearl sago.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1193/1624613-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "AGV Neo Neo Eight Treasures Congee",
+		"Price": "$ 1.79 / EA",
+		"Description": "Made 12 kinds of natural foods that are rich in nutrients this dessert can be enjoyed hot or cold.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1194/1624614-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "AGV Adlay Deluxe Oatmeal",
+		"Price": "$ 1.79 / EA",
+		"Description": "AGV Adlay Deluxe Oatmeal is a Chinese dessert that can be enjoyed chilled or cold. With nutritious ingredients you can enjoy this dessert anytime!",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1628/2624602-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "TAISUN GRASS JELLY PUDDING",
+		"Price": "$ 1.79 / EA",
+		"Description": "Enjoy a timeless classic - grass jelly! Derived from the stalks of the xian cao plant, grass jelly is usually paired with evaporated milk and various syrups as a dessert - hot or cold. This Chinese dessert is now available to you in the convenience of a can from Taisun!",
+		"Pic_URL": "https://www.99ranch.com/img/CMSImages/3624011F.jpg"
+	},
+	{
+		"ItemName": "Ve Wong Fried Gluten With Peanuts",
+		"Price": "$ 1.89 / EA",
+		"Description": "Ve Wong fried gluten with peanuts is a delicious fast food that can be enjoyed with any dish!",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1242/1633025-1_14%20(1).jpg"
+	},
+	{
+		"ItemName": "Ve Wong Fried Gluten",
+		"Price": "$ 1.89 / EA",
+		"Description": "Ve Wong fried gluten is a delicious fast food that can be enjoyed with any dish!",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1243/1633026-1_13%20(1).jpg"
+	},
+	{
+		"ItemName": "Furn You Gluten",
+		"Price": "$ 2.09 / EA ",
+		"Description": "Seasoning Gluten & Golden Mushrooms adds savory flavors to rice noodles and other dishes.",
+		"Pic_URL": "https://www.99ranch.com/ul/products/1248/1633171-1_13%20(1).jpg"
+	}
+]
