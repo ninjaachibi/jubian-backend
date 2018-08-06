@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+var axios = require('axios');
 const MongoStore = require('connect-mongo')(session);
 const app = express();
 const User = require('./models/user.js');
@@ -21,7 +20,7 @@ if (!process.env.MONGODB_URI) {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.post('/register', (req, res) => {
+app.post('/register', (req, res) => {
     const newUser = new User({
       username: req.body.username,
       password: req.body.password
@@ -34,7 +33,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
       res.send(error);
     })
   });
-
 app.post('/login',(req,res) =>{
   console.log('booty', req.body)
   User.findOne({username:req.body.username}, function(err, user) {
@@ -69,6 +67,26 @@ app.post('/login',(req,res) =>{
         });
  
 });
+
+
+app.get('/',async(req,res)=>{
+  axios.get('https://maps.googleapis.com/maps/api/distancematrix/json', {
+      params: {
+        key: process.env.API_KEY,
+        origins: '1015 Josephine Claire Way, Columbus, OH',
+        destinations: `32.78306,-96.80667`,
+      },
+    })
+    .then((res)=>{
+      console.log(res.data.rows[0].elements[0].duration.text)
+    })
+    .catch(err =>{
+        console.log(err)
+    })
+    res.json({
+        success:true
+    });
+})
 
 
 app.use(function(req, res, next) {
