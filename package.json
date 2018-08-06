@@ -21,6 +21,8 @@
     "nodemon": "^1.18.1"
   },
   "dependencies": {
+    "@google/maps": "^0.5.5",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "connect-mongo": "^2.0.1",
     "express": "^4.16.3",

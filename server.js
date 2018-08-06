@@ -1,3 +1,5 @@
+
+var axios = require('axios');
 import express from 'express';
 import bodyParser from 'body-parser';
 const app = express();
@@ -92,7 +94,6 @@ app.post('/login',(req,res) =>{
 app.get('/browse', (req,res) => {
   let aisle = req.query.aisle;
   console.log('aisle', aisle);
-
   GroceryItem.find({aisle})
   .then(items => {
     console.log(items);
@@ -103,8 +104,46 @@ app.get('/browse', (req,res) => {
     res.json({error: err})
   })
 
-
 })
+
+
+
+app.post('/getTime',async(req,res)=>{
+
+  function splitWaypoints(locationArr){
+    var returnStr = ''
+    for(var i=0;i<locationArr.length;i++){
+      returnStr.concat(locationArr[i]+"|")
+    }
+    console.log(returnStr)
+    return returnStr
+  }
+
+  axios.get('https://maps.googleapis.com/maps/api/directions/json', {
+      params: {
+        key: process.env.API_KEY,
+        origin:req.body.origin,
+        waypoints:splitWaypoints(req.body.stops),
+        destination: req.body.destination,
+      },
+    })
+    .then((res)=>{
+     
+      console.log(res.data.routes[0].legs.length)
+      console.log()
+      console.log(res.data.routes[0].legs[0].duration.text)
+
+    })
+    .catch(err =>{
+        console.log(err)
+    })
+    res.json({
+      Success:true,
+    })
+    
+})
+
+
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
