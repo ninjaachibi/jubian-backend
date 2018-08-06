@@ -107,23 +107,40 @@ app.get('/browse', (req,res) => {
 })
 
 
-app.get('/',async(req,res)=>{
-  axios.get('https://maps.googleapis.com/maps/api/distancematrix/json', {
+
+app.post('/getTime',async(req,res)=>{
+
+  function splitWaypoints(locationArr){
+    var returnStr = ''
+    for(var i=0;i<locationArr.length;i++){
+      returnStr.concat(locationArr[i]+"|")
+    }
+    console.log(returnStr)
+    return returnStr
+  }
+
+  axios.get('https://maps.googleapis.com/maps/api/directions/json', {
       params: {
         key: process.env.API_KEY,
-        origins: '1015 Josephine Claire Way, Columbus, OH',
-        destinations: `32.78306,-96.80667`,
+        origin:req.body.origin,
+        waypoints:splitWaypoints(req.body.stops),
+        destination: req.body.destination,
       },
     })
     .then((res)=>{
-      console.log(res.data.rows[0].elements[0].duration.text)
+     
+      console.log(res.data.routes[0].legs.length)
+      console.log()
+      console.log(res.data.routes[0].legs[0].duration.text)
+
     })
     .catch(err =>{
         console.log(err)
     })
     res.json({
-        success:true
-    });
+      Success:true,
+    })
+    
 })
 
 
