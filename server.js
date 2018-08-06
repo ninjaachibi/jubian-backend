@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-import { User } from './models/models'
+import { User, GroceryItem } from './models/models'
 
 if (!process.env.MONGODB_URI) {
   console.log('MONGODB_URI config failed');
@@ -20,6 +20,7 @@ mongoose.connection.on('connected', function() {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//AUTH ROUTES
 app.post('/register', (req, res) => {
   console.log('body', req.body);
   User.findOne({username: req.body.username})
@@ -84,10 +85,26 @@ app.post('/login',(req,res) =>{
       userId: user._id
     })
   }
+  });
 });
 
-});
+//SEARCH
+app.get('/browse', (req,res) => {
+  let aisle = req.query.aisle;
+  console.log('aisle', aisle);
 
+  GroceryItem.find({aisle})
+  .then(items => {
+    console.log(items);
+    res.json({items})
+  })
+  .catch(err => {
+    console.log(err);
+    res.json({error: err})
+  })
+
+
+})
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
