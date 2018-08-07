@@ -169,7 +169,14 @@ app.post('/travelTime',async(req,res)=>{
       let resultArray = () =>{
         var returnArr =[];
        for(var i=0;i<response.data.routes[0].legs.length;i++){
-        returnArr.push({time: response.data.routes[0].legs[i].duration.text,id:orderArray[i]})
+
+        returnArr.push({
+          time: {
+            value:response.data.routes[0].legs[i].duration.value,
+            text:response.data.routes[0].legs[i].duration.text
+          },
+          id:orderArray[i]
+        })
         }
         console.log(returnArr)
         return returnArr
@@ -178,7 +185,7 @@ app.post('/travelTime',async(req,res)=>{
       // console.log(res.data.routes[0].legs[1].duration.text)
       // console.log(res.data.routes[0].legs[2].duration.text)
       let jspnObj = resultArray()
-     res.json({jspnObj}
+      res.json({jspnObj}
       )
      
     }
