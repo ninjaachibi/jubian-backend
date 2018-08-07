@@ -12,6 +12,17 @@ const userSchema = new Schema({
   }
 });
 
+const driverSchema = new Schema({
+  username: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+});
+
 const orderSchema = new Schema({
   totalPrice:{
     type: Number,
@@ -27,8 +38,13 @@ const orderSchema = new Schema({
   time: {
     type: Date,
     default: new Date()
+  },
+  deliveredBy:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'Driver'
   }
 });
+
 
 const groceryItemSchema = new Schema({
   name: {
@@ -51,7 +67,8 @@ const groceryItemSchema = new Schema({
 })
 
 let User = mongoose.model('User', userSchema);
+let Driver = mongoose.model('Driver', driverSchema);
 let GroceryItem = mongoose.model('GroceryItem', groceryItemSchema);
 let Order = mongoose.model('Order', orderSchema);
 
-export { User, GroceryItem, Order};
+export { User, GroceryItem, Order,Driver };
