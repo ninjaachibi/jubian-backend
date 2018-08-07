@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-import { User, GroceryItem } from './models/models'
+import { User, GroceryItem, Order } from './models/models'
 
 if (!process.env.MONGODB_URI) {
   console.log('MONGODB_URI config failed');
@@ -106,41 +106,97 @@ app.get('/browse', (req,res) => {
 
 })
 
+app.post('/Order',(req,res) =>{
+  const newOrder = new Order({
+    totalPrice:req.body.totalPrice,
+    orderedBy:User._id,
+    address:req.body.address
+  })
 
+  newOrder.save(function(err){
+    if(err){
+      console.log("Error",err)
+    }
+    else{
+      res.json({
+        success:true
+      })
+      Order.find({})
+      .populate('orderedBy')
+      .exec(function(error,orders){
+        console.log(JSON.stringify(orders, null, "\t"))
+      })
+    }
+  })
+})
 
-app.post('/getTime',async(req,res)=>{
+// app.get('/OrderArray', (req,res)=>{
+//     let orderArray = req.body.orderArray
+//     for (var i=0;i<orderArray.length;i++){
+      
+//     }
+
+// })
+
+app.post('/travelTime',async(req,res)=>{
 
   function splitWaypoints(locationArr){
-    var returnStr = ''
-    for(var i=0;i<locationArr.length;i++){
-      returnStr.concat(locationArr[i]+"|")
-    }
+    console.log('hiihifhi')
+    var returnStr = locationArr.join('|')
+
     console.log(returnStr)
     return returnStr
   }
+
+  let orderArray = ['5b68ec6844a3bb6e0ced441b','5b68ed6344a3bb6e0ced441c','5b68ed7844a3bb6e0ced441d']
+  let results = await Promise.all(orderArray.map(orderId => Order.findById(orderId)));
+  var locationArray = results.map(order => order.address);
+  console.log(locationArray)
+
+  let s = splitWaypoints(locationArray)
+  
+
 
   axios.get('https://maps.googleapis.com/maps/api/directions/json', {
       params: {
         key: process.env.API_KEY,
         origin:req.body.origin,
-        waypoints:splitWaypoints(req.body.stops),
+        waypoints: s,
         destination: req.body.destination,
       },
     })
-    .then((res)=>{
-     
-      console.log(res.data.routes[0].legs.length)
-      console.log()
-      console.log(res.data.routes[0].legs[0].duration.text)
+    .then((response)=>{
+      let resultArray = () =>{
+        var returnArr =[];
+       for(var i=0;i<response.data.routes[0].legs.length;i++){
 
-    })
+        returnArr.push({
+          time: {
+            value:response.data.routes[0].legs[i].duration.value,
+            text:response.data.routes[0].legs[i].duration.text
+          },
+          id:orderArray[i]
+        })
+        }
+        console.log(returnArr)
+        return returnArr
+       }
+      console.log(response.data.routes[0].legs[0].duration.text)
+      // console.log(res.data.routes[0].legs[1].duration.text)
+      // console.log(res.data.routes[0].legs[2].duration.text)
+      let jspnObj = resultArray()
+      res.json({jspnObj}
+      )
+     
+    }
+      
+    )
     .catch(err =>{
         console.log(err)
     })
-    res.json({
-      Success:true,
-    })
-    
+    // res.json({
+    //   success:true
+    // })
 })
 
 

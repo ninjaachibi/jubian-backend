@@ -12,6 +12,24 @@ const userSchema = new Schema({
   }
 });
 
+const orderSchema = new Schema({
+  totalPrice:{
+    type: Number,
+  },
+  orderedBy:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  address:{
+    type:String,
+    required: true
+  },
+  time: {
+    type: Date,
+    default: new Date()
+  }
+});
+
 const groceryItemSchema = new Schema({
   name: {
     type: String,
@@ -33,6 +51,7 @@ const groceryItemSchema = new Schema({
 })
 
 let User = mongoose.model('User', userSchema);
-let GroceryItem = mongoose.model('GroceryItem', groceryItemSchema)
+let GroceryItem = mongoose.model('GroceryItem', groceryItemSchema);
+let Order = mongoose.model('Order', orderSchema);
 
-export { User, GroceryItem};
+export { User, GroceryItem, Order};
