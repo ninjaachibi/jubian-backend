@@ -1,5 +1,6 @@
 var axios = require('axios');
 var express = require('express');
+var jwt = require('jsonwebtoken');
 var router = express.Router();
 
 import { User, GroceryItem, Order, Driver } from '../models/models.js'
@@ -70,7 +71,11 @@ router.post('/login',(req,res) =>{
     //if authorization succeeds
     res.json({
       success: true,
-      userId: user._id
+      userId: user._id,
+      token: jwt.sign(
+              { _id: user.id, username: user.username }, 
+              process.env.JWT_SECRET, 
+              { expiresIn: '1d' })
     })
   }
 });
@@ -91,30 +96,6 @@ router.get('/browse', (req,res) => {
   })
 })
 
-//ORDER
-router.post('/Order',(req,res) =>{
-  const newOrder = new Order({
-    totalPrice:req.body.totalPrice,
-    orderedBy:User._id, //need to change this to client userId
-    address:req.body.address
-  })
-
-  newOrder.save(function(err){
-    if(err){
-      console.log("Error",err)
-    }
-    else{
-      res.json({
-        success:true
-      })
-      Order.find({})
-      .populate('orderedBy')
-      .exec(function(error,orders){
-        console.log(JSON.stringify(orders, null, "\t"))
-      })
-    }
-  })
-})
 
 router.post('/payments', function(req, res){
   console.log('payment request..', req.body)

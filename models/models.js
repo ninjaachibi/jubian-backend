@@ -29,7 +29,8 @@ const orderSchema = new Schema({
   },
   orderedBy:{
     type:mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
   address:{
     type:String,
@@ -42,6 +43,9 @@ const orderSchema = new Schema({
   deliveredBy:{
     type:mongoose.Schema.Types.ObjectId,
     ref: 'Driver'
+  },
+  items:{
+    type:Array
   }
 });
 
