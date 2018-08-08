@@ -1,9 +1,11 @@
 var axios = require('axios');
 var express = require('express');
 var router = express.Router();
-import { User, GroceryItem, Order } from '../models/models.js'
+
+import { User, GroceryItem, Order, Driver } from '../models/models.js'
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
+
 
 
 //AUTH ROUTES
@@ -181,8 +183,6 @@ router.post('/travelTime', async(req,res)=>{
       return returnArr
     }
     console.log(response.data.routes[0].legs[0].duration.text)
-    // console.log(res.data.routes[0].legs[1].duration.text)
-    // console.log(res.data.routes[0].legs[2].duration.text)
     let jspnObj = resultArray()
     res.json({data: jspnObj}
     )
@@ -194,5 +194,82 @@ router.post('/travelTime', async(req,res)=>{
     console.log(err)
   })
 })
+
+//Driver Register
+router.post('/driverRegister', (req, res) => {
+    console.log('body', req.body);
+    Driver.findOne({username: req.body.username})
+    .then((driver) => {
+      console.log('driver', driver);
+      if(driver) {
+        res.json({
+          success: false,
+          message: "Username already exists!"
+        })
+      }
+      else {
+        const newDriver = new Driver({
+          username: req.body.username,
+          password: req.body.password
+        });
+        newDriver.save()
+        .then(user => {
+          res.json({
+            success: true,
+            message: `Successfully registered a new driver: ${user.username}!`
+          });
+        })
+        .catch(error => {
+          res.json({
+            success: false,
+            message: `Error: ${error}`
+          });
+        })
+      }
+    })
+  });
+  
+
+  //Driver Login
+  router.post('/driverLogin',(req,res) =>{
+    console.log('booty', req.body)
+    Driver.findOne({username:req.body.username}, function(err, user) {
+      if (err) {
+        console.error(err);
+        res.json({
+          success:false,
+          message: "Error!" + err
+        });
+      }
+      else if (!user) {
+        console.log("user",user);
+        res.json({
+          success:false,
+          message: "Invalid user"
+        });
+      }
+      //if passwords don't match, authorization failed
+      else if (user.password !== req.body.password) {
+        res.json({
+          success: false,
+          message:"Incorrect password"
+        })
+      }
+      else{ console.log({user:req.body})
+      //if authorization succeeds
+      res.json({
+        success: true,
+        driverId: user._id
+      })
+    }
+  });
+  });
+
+
+//RenderAvaliableOrder
+//router.post('/selectOrder',)
+
+
+
 
 module.exports = router;

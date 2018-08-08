@@ -17,6 +17,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.on('connected', function() {
   console.log('Connected to MONGODB!');
+  console.log('mong',process.env.API_KEY)
 })
 
 app.use(bodyParser.json())
