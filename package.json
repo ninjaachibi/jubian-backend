@@ -29,7 +29,8 @@
     "jsonwebtoken": "^8.3.0",
     "moment": "^2.22.2",
     "mongoose": "^5.2.3",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "stripe": "^6.7.0"
   },
   "babel": {
     "presets": [
