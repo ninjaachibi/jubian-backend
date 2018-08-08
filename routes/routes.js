@@ -2,6 +2,8 @@ var axios = require('axios');
 var express = require('express');
 var router = express.Router();
 import { User, GroceryItem, Order } from '../models/models.js'
+import Stripe from 'stripe';
+const stripe = Stripe(process.env.STRIPE_API_KEY);
 
 
 //AUTH ROUTES
@@ -85,9 +87,7 @@ router.get('/browse', (req,res) => {
     console.log(err);
     res.json({error: err})
   })
-
 })
-
 
 //ORDER
 router.post('/Order',(req,res) =>{
@@ -113,6 +113,26 @@ router.post('/Order',(req,res) =>{
     }
   })
 })
+
+router.post('/payments', function(req, res){
+  console.log('payment request..', req.body)
+  var token = req.body.stripeToken; // Using Express
+  //Charge the user's card:
+  var charge = stripe.charges.create({
+    amount: req.body.total * 100,
+    currency: "usd",
+    description: "test charge", //change to user and items
+    source: token,
+  }, function(err, charge) {
+    if(err) {
+      console.log(err);
+      res.json({success: false})
+    } else {
+      console.log('success payment', charge);
+      res.json(charge)
+    }
+  });
+});
 
 
 //TravelTime & Google API
