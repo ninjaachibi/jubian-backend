@@ -73,7 +73,7 @@ router.post('/login',(req,res) =>{
       success: true,
       userId: user._id,
       token: jwt.sign(
-        { _id: user.id, username: user.username },
+        { _id: user._id, username: user.username },
         process.env.JWT_SECRET,
         { expiresIn: '1d' })
       })
@@ -111,6 +111,27 @@ router.get('/searchItem',(req,res) =>{
     res.json({error: err})
   })
 })
+
+//For stripe payments
+router.post('/payments', function(req, res){
+  console.log('payment request..', req.body)
+  var token = req.body.stripeToken; // Using Express
+  //Charge the user's card:
+  var charge = stripe.charges.create({
+    amount: Math.round(req.body.total * 100),
+    currency: "usd",
+    description: "test charge", //change to user and items
+    source: token,
+  }, function(err, charge) {
+    if(err) {
+      console.log(err);
+      res.json({success: false, message: err.message})
+    } else {
+      console.log('success payment', charge);
+      res.json({success: true, charge})
+    }
+  });
+});
 
 
 //TravelTime & Google API
