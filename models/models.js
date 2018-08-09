@@ -35,6 +35,10 @@ const orderSchema = new Schema({
     ref: 'User',
     required: true
   },
+  contactInfo: {
+    name: String,
+    phone: String,
+  },
   address:{
     type:String,
     required: true
