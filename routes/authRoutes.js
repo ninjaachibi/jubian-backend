@@ -46,7 +46,7 @@ router.post('/Order',(req,res) =>{
     totalPrice:req.body.totalPrice,
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
-    item:req.body.item
+    items:req.body.items
   })
 
   newOrder.save(function(err) {

@@ -9,6 +9,9 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  email:{
+    type: String,
   }
 });
 
@@ -44,9 +47,14 @@ const orderSchema = new Schema({
     type:mongoose.Schema.Types.ObjectId,
     ref: 'Driver'
   },
-  items:{
-    type:Array
-  }
+  items:[
+    {
+      name: String,
+      count: Number
+    }
+  ]
+
+  
 });
 
 

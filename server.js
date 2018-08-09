@@ -24,8 +24,7 @@ mongoose.connection.on('connected', function() {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', routes)
-
+app.use('/', routes);
 app.use('/', authRoutes);
 
 

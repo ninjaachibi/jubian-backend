@@ -81,7 +81,7 @@ router.post('/login',(req,res) =>{
   });
 });
 
-//SEARCH
+//SEARCH -- browse specific aisles
 router.get('/browse', (req,res) => {
   let aisle = req.query.aisle;
   console.log('aisle', aisle);
@@ -95,6 +95,23 @@ router.get('/browse', (req,res) => {
     res.json({error: err})
   })
 })
+
+
+//Search --browse certain item
+router.get('/searchItem',(req,res) =>{
+  let searchItem = req.query.searchItem;
+  console.log('item', searchItem);
+  GroceryItem.find({name:{$regex : searchItem}})
+  .then(items => {
+    console.log(items);
+    res.json({items})
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({error: err})
+  })
+})
+
 
 //TravelTime & Google API
 /* required params:
