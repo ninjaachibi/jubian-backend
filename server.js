@@ -24,8 +24,9 @@ mongoose.connection.on('connected', function() {
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/',routes)
 app.use('/', authRoutes);
+app.use('/', routes)
+
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
