@@ -101,7 +101,7 @@ router.get('/browse', (req,res) => {
 router.get('/searchItem',(req,res) =>{
   let searchItem = req.query.searchItem;
   console.log('item', searchItem);
-  GroceryItem.find({name:{$regex : searchItem}})
+  GroceryItem.find({name:{$regex: searchItem}})
   .then(items => {
     console.log(items);
     res.json({items})
