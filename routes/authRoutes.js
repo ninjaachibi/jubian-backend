@@ -5,7 +5,6 @@ import { User, Order } from '../models/models.js'
 
 router.use(function(req, res, next) {
   var token = req.headers.authorization;
-  console.log('token is', token);
 
   if (token === undefined) return res.status(401).json({ success: false, message: 'no jwt token' });
 
@@ -16,7 +15,13 @@ router.use(function(req, res, next) {
 
   token = tokenArr[1];
 
-  var userInfo = jwt.verify(token, process.env.JWT_SECRET);
+  try {
+    console.log(token);
+    var userInfo = jwt.verify(token, process.env.JWT_SECRET);
+  } catch(err) {
+    res.status(401).json({ success: false, message: 'Invalid token' });
+    return;
+  }
   /*
   { _id: "fsvnssd", username: "hello" }
   */
@@ -43,29 +48,29 @@ router.get('/userOrder',(req,res)=>{
 })
 
 //ORDER - save order in database
-router.post('/Order',(req,res) =>{
+router.post('/Order',(req,res) => {
+  console.log('body', req.body);
   const newOrder = new Order({
     totalPrice:req.body.totalPrice,
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
-    items:req.body.items
+    items: req.body.items
   })
 
-  newOrder.save(function(err) {
-    if(err){
-      console.log("Error", err)
-    }
-    else{
-      res.json({
-        success:true
-      })
-      Order.find({})
-      .populate('orderedBy')
-      .exec(function(error,orders) {
-        console.log(JSON.stringify(orders, null, "\t"))
-      })
-    }
+  newOrder.save()
+  .then((order) => {
+    console.log('successfully saved order', order);
   })
+  .catch(err => {
+    console.log('error',err);
+  })
+
+    //   Order.find({})
+    //   .populate('orderedBy')
+    //   .exec(function(error, orders) {
+    //     console.log(JSON.stringify(orders, null, "\t"))
+    //   })
+
 })
 
 

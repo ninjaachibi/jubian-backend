@@ -50,11 +50,16 @@ const orderSchema = new Schema({
   items:[
     {
       name: String,
-      count: Number
+      count: Number,
+      itemId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'GroceryItem',
+        required: true,
+      }
     }
   ]
 
-  
+
 });
 
 
