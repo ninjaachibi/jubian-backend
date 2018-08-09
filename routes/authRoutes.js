@@ -5,11 +5,13 @@ import { User, Order } from '../models/models.js'
 
 router.use(function(req, res, next) {
   var token = req.headers.authorization;
-  if (token === undefined) return res.status(401).json({ success: false });
+  console.log('token is', token);
+
+  if (token === undefined) return res.status(401).json({ success: false, message: 'no jwt token' });
 
   var tokenArr = token.split(' ');
   if (tokenArr[0] !== 'Bearer' || tokenArr[1] === undefined) {
-    return res.status(401).json({ success: false });
+    return res.status(401).json({ success: false, message: 'Missing bearer or token fields' });
   }
 
   token = tokenArr[1];
@@ -18,7 +20,7 @@ router.use(function(req, res, next) {
   /*
   { _id: "fsvnssd", username: "hello" }
   */
-  if (userInfo._id === undefined) return res.status(401).json({ success: false });
+  if (userInfo._id === undefined) return res.status(401).json({ success: false, message: 'Could not sign with JWT SECRET' });
 
   req.user = userInfo;
   next();
@@ -66,26 +68,7 @@ router.post('/Order',(req,res) =>{
   })
 })
 
-//For stripe payments
-router.post('/payments', function(req, res){
-  console.log('payment request..', req.body)
-  var token = req.body.stripeToken; // Using Express
-  //Charge the user's card:
-  var charge = stripe.charges.create({
-    amount: req.body.total * 100,
-    currency: "usd",
-    description: "test charge", //change to user and items
-    source: token,
-  }, function(err, charge) {
-    if(err) {
-      console.log(err);
-      res.json({success: false})
-    } else {
-      console.log('success payment', charge);
-      res.json(charge)
-    }
-  });
-});
+
 
 
 
