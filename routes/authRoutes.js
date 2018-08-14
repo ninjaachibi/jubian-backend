@@ -33,7 +33,7 @@ router.use(function(req, res, next) {
 
 
 //USERORDER
-router.get('/userOrder',(req,res)=>{
+router.get('/userOrder',(req,res)=>{ //need to make this account for multiple orders
   let userid = req.user._id;
   console.log('userid',userid);
   Order.findOne({orderedBy:userid})
