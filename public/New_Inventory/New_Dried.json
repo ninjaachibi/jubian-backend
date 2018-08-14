@@ -145,5 +145,215 @@
     "Description": "Fried garlic flakes are deep fried garlic pieces perfect for seasoning dishes. This product is very versatile and rich in flavor.",
     "Pic_URL": "https://www.99ranch.com/ul/products/1254/1636011-1_13%20(1).jpg",
     "aisle": "dried"
+  },
+  {
+    "ItemName": "Mogami Organic Red Bean",
+    "Price": "$2.39 ",
+    "Description": "Mogami Organic Red Bean is certified by Organic Certifiers Inc. and packed in the US. 100% natural organic red beans.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/mogami-organic-red-bean",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Asian Taste Organic Soybean",
+    "Price": "$2.39 ",
+    "Description": "Asian Taste Organic Soybeans provide a unique delicious taste which is perfect for making soy milk tofu and yogurt.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/asian-taste-organic-soybean",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Zhishen Wild Sour Jujube",
+    "Price": "$2.39 ",
+    "Description": "Wild Sour Jujube is right in nutrition favorable to human health and has great taste. Enjoy from the bag or use as an ingredient",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/zhishen-wild-sour-jujube",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Wu Fu Yuan Colored Tapioca Pearl",
+    "Price": "$2.49 ",
+    "Description": "Wu Fu Yuan Colored Tapioca Pearls allow you to make a fun and colorful bubble tea! Easy to cook and ready to go in just 5 minutes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/wu-fu-yuan-colored-tapioca-pearl",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Sunlight Fried Onion Flake",
+    "Price": "$2.49 ",
+    "Description": "Sunlight Fried Onion Flakes are deep fried and perfect for seasoning dishes. This product is very versatile and rich in flavor.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/sunlight-fried-onion-flake",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Sunlight Fried Garlic Flake",
+    "Price": "$2.49 ",
+    "Description": "Fried garlic flakes are deep fried garlic pieces perfect for seasoning dishes. This product is very versatile and rich in flavor.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/sunlight-fried-garlic-flake",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Wu Fu Yuan Tapioca Pearl",
+    "Price": "$2.49 ",
+    "Description": "Wu Fu Yuan tapioca pearls allow you to make your own bubble tea! Easy to cook ready in just 5 minutes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/wu-fu-yuan-tapioca-pearl",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Golden Blue Bird Coreless Jujube",
+    "Price": "$2.69 ",
+    "Description": "Jinsi jujube also known as celestial date is fine quality with sweet taste a thin peel and thick meat. They are known known as \\king of fruits\\. Jinsi jujube contains plenty of amino acids vitamins and minerals. Can be enjoyed from the bag or as ingredients in dishes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/golden-blue-bird-coreless-jujube",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Red Lantern Sago Pearl",
+    "Price": "$2.79 ",
+    "Description": "Tapioca Perle Sago makes it easy to make sweet sago pudding right at home.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/red-lantern-sago-pearl",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Shanlin Laver Nori",
+    "Price": "$2.99 ",
+    "Description": "Shanlin Laver Nori is healthy and delicious. It can be enjoyed with soups or in dishes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/shanlin-laver-nori",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "WU FU YUAN NEW SAGO LARGE TARO PEARLS",
+    "Price": "$2.99 ",
+    "Description": "Take drink and dessert making to new heights with texture and taste. Enjoy Wu Fu Yuan New Sago Large Taro Pearls for a smooth, sweet, yet chewy taste. Add to dessert soups and milk teas for a special treat!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/wu-fu-yuan-new-sago-large-taro-pearls",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Sinbo Boxed Dried Black Fungus",
+    "Price": "$3.29 ",
+    "Description": "Sinbo Dried Black Fungus are delicate with a slightly crunchy texture. Simply soak and cook to enjoy.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/sinbo-boxed-dried-black-fungus",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Kotashina Dried Pearl Barley",
+    "Price": "$3.39 ",
+    "Description": "Kotashina Dried Pearl Barley is delicious and healthy and can be used with various drinks and stewed soups.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/kotashina-dried-pearl-barley",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Rose Dried Honey Date",
+    "Price": "$3.49 ",
+    "Description": "Rose Dried Date is a dried vegetable with good nutrition which prefect for making Asian style soup and dessert",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/rose-dried-honey-date",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "SINBO Dried Lily Flower",
+    "Price": "$3.59 ",
+    "Description": "Asian Taste dried Lily Flowers are a product of China. Lily flowers are used in many traditional Chinese dishes for its health benefits. One of the main helath benefits of lily flowers is regulation of heart rate.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/sinbo-dried-lily-flower",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Kimbo Pork Fu",
+    "Price": "$3.59 ",
+    "Description": "Kimbo Brand Pork Sung is made from high quality dried pork. Cooked shredded dried pork is commonly used in rice soup or congee in Chinese cuisine. Originating from Vietnam this product is made in the USA.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/kimbo-pork-fu",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Kimbo Pork Sung",
+    "Price": "$3.59 ",
+    "Description": "Kimbo Brand Pork Sung is made from high quality dried pork. Cooked shredded dried pork is commonly used in rice soup or congee in Chinese cuisine. Originating from Vietnam this product is made in the USA.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/kimbo-pork-sung",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "GREENMAX ROASTED WHITE SESAME JAR",
+    "Price": "$3.99 ",
+    "Description": "A must have for any pantry, enjoy Greenmax Roasted White Sesame for a variety of breads, pies, and pastries. Housed in a sturdy jar.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/greenmax-roasted-white-sesame-jar",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Flower Prickly Ash",
+    "Price": "$4.19 ",
+    "Description": "Flower Prickly Ash is an Asian style seasonings. It is a good partner for making chinese marinade",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/flower-prickly-ash",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "GREENMAX ROASTED BLACK SESAME JAR",
+    "Price": "$4.29 ",
+    "Description": "A must have for any pantry, enjoy Greenmax Roasted Black Sesame for a variety of breads, pies, and pastries. Housed in a sturdy jar.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/greenmax-roasted-black-sesame-jar",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "HY Dried Seaweed Knots",
+    "Price": "$4.39 ",
+    "Description": "HY Dried Seaweed allows you to enjoy fresh seaweed right at home. Simply soak then cook to enjoy the rich flavor and tender texture of seaweed.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/hy-dried-seaweed-knots",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Asian Taste Dried White Fungus",
+    "Price": "$4.89 ",
+    "Description": "Dried White Fungus is good to be used in cooking traditional Chinese soup and dessert. It contains Vitamin D, it is good to be used for beauty purpose",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/asian-taste-dried-white-fungus",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "GREENMAX YAM AND MULTI GRAIN RICE",
+    "Price": "$4.99 ",
+    "Description": "Greenmax Yam And Multi Grain Rice combines healthy yam and a blend of delicious grains for a hearty and nutritious rice, perfect for any meal!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/greenmax-yam-and-multi-grain-rice",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Asian Taste Dried Lotus Seed",
+    "Price": "$4.99 ",
+    "Description": "Asian Taste Dried Lotus Seed is not only nutritious but also very delicious. Lotus sees is good for the blood stomach and promotes calmness.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/asian-taste-dried-lotus-seed",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Hanasia Seaweed Sushi Nori (30 Sheets)",
+    "Price": "$5.29 ",
+    "Description": "Hanasia Yaki Sushi Nori is Korean roasted laver that is perferct for making sushi and hand rolls.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/hanasia-seaweed-sushi-nori-30-sheets",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Shanlin Small Dried Seaweed Cake",
+    "Price": "$5.49 ",
+    "Description": "Shanlin Dried Seaweed Cake is all natural delicious free of sand seaweed. This seaweed cake is great for making soup.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/shanlin-small-dried-seaweed-cake",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Sinbo Dried 4.5-6CM Mushroom",
+    "Price": "$5.69 ",
+    "Description": "Sinbo mushrooms are a product of China. These mushrooms have a rich smoky flavor exotic aroma and a firm texture.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/sinbo-dried-4.5-6cm-mushroom",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Botan 5 Pound Calrose Rice",
+    "Price": "$5.99 ",
+    "Description": "A nice 5 pound bag of rice helps make for many hearty meals!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/botan-5-pound-calrose-rice",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "GREENMAX FINE TEN GRAINS",
+    "Price": "$6.99 ",
+    "Description": "Taste a quality selection of grains and rice such as brown rice, oat, red wheat, songhum, and adlay in this nutrition, fiber packed product from Greenmax.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/greenmax-fine-ten-grains",
+    "aisle": "dried"
+  },
+  {
+    "ItemName": "Nishiki 10 Pound Premium Rice",
+    "Price": "$14.99 ",
+    "Description": "Nishiki Premium Rice is a top choice for quality rice for the entire family. Enjoy this 10 pound sized bag.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-dried-goods/nishiki-10-pound-premium-rice",
+    "aisle": "dried"
   }
-]
+ ]
