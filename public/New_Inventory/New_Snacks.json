@@ -28,13 +28,6 @@
     "aisle": "snacks"
   },
   {
-    "ItemName": "Nongshim Spicy Shrimp Crackers",
-    "Description": "Spicy Shrimp Crackers are a spicier version of the Shrimp Cracker product.",
-    "Price": "179",
-    "Pic_URL": "https://www.99ranch.com/ul/products/1333/1643103-1_13800x800.png",
-    "aisle": "snacks"
-  },
-  {
     "ItemName": "AGV Okinawa Brown Eight Treasures Congee",
     "Description": "AGV Okinawa Brown Eight Treasures Deluxe Congee with Brown Sugar is great tasting dessert. Made with brown sugar and nutritious ingredients this dessert makes a refreshing snack anytime.",
     "Price": "209",
@@ -46,6 +39,279 @@
     "Description": "Soft sweet lychee flavored jellies make an excellent treat.",
     "Price": "189",
     "Pic_URL": "https://www.99ranch.com/ul/products/1295/1641631-1_13800x800.png",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Haitai Ace Cracker",
+    "Price": "$0.79 ",
+    "Description": "Haitai's Ace Crackers can definitely \"ace\" your snack cravings. Stock up on this item for move night or road trips for an easy to reach snack.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/haitai-ace-cracker",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Cha Cha Original Flavor Potato Crackers",
+    "Price": "$0.79 ",
+    "Description": "Cha Cha Original Flavor Potato Crackers are a crispy, enjoyable snack for convenient and easy snacking.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cha-cha-original-flavor-potato-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Cha Cha BBQ Flavor Potato Crackers",
+    "Price": "$0.79 ",
+    "Description": "Cha Cha BBQ Flavor Potato Crackers are a crispy, enjoyable snack for convenient and easy snacking.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cha-cha-bbq-flavor-potato-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Cha Cha Wasabi Flavor Potato Crackers",
+    "Price": "$0.79 ",
+    "Description": "Cha Cha Wasabi Flavor Potato Crackers are a crispy, enjoyable snack for convenient and easy snacking.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cha-cha-wasabi-flavor-potato-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Cha Cha Scallion Flavor Potato Crackers",
+    "Price": "$0.79 ",
+    "Description": "Cha Cha Scallion Flavor Potato Crackers are a crispy, enjoyable snack for convenient and easy snacking.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cha-cha-scallion-flavor-potato-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Cha Cha Spicy Flavor Potato Crackers",
+    "Price": "$0.79 ",
+    "Description": "Cha Cha Spicy Flavor Potato Crackers are a crispy, enjoyable snack for convenient and easy snacking.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cha-cha-spicy-flavor-potato-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Cha Cha Tomato Flavor Potato Crackers",
+    "Price": "$0.79 ",
+    "Description": "Cha Cha Tomato Flavor Potato Crackers are a crispy, enjoyable snack for convenient and easy snacking.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cha-cha-tomato-flavor-potato-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Kuai Kuai Milk Corn Snack",
+    "Price": "$0.80 ",
+    "Description": "A soft and crisp corn snack with a delicious milk flavor.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/kuai-kuai-milk-corn-snack",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Meiji Hello Panda Milk Cream Biscuit",
+    "Price": "$0.89 ",
+    "Description": "Hello Panda is a very popular brand of Japanese quality biscuit. Each biscuit consists of a small hollow shortbread filled with a creamy milk filing. These yummy biscuits are great for snacks and their convenient size makes them perfect for school lunchboxes. They are lower in sugar than many other biscuit brands and nutritionally packed with fibre a great benefit for kids and families.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/meiji-hello-panda-milk-cream-biscuit",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Meiji Chocolate Hello Panda Biscuits",
+    "Price": "$0.89 ",
+    "Description": "Hello Panda is a very popular brand of Japanese quality biscuit. Each biscuit consists of a small hollow shortbread filled with a creamy chocolate filing. These yummy biscuits are great for snacks and their convenient size makes them perfect for school lunchboxes. They are lower in sugar than many other biscuit brands and nutritionally packed with fibre a great benefit for kids and families.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/meiji-chocolate-hello-panda-biscuits",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Amira Small Tamarind Candy",
+    "Price": "$0.89 ",
+    "Description": "Amira Small Tamarind Candy gives sweet yet slightly sour flavor for a daring pop of flavor whenever you are feeling adventurous",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/amira-small-tamarind-candy",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Oishi Regular Prawn Crackers",
+    "Price": "$0.89 ",
+    "Description": "Crispy prawn crackers are the perfect snack for any occasion!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/oishi-regular-prawn-crackers",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "CHIU-FU MA HWA COOKIES",
+    "Price": "$0.89 ",
+    "Description": "Full of delicious taste, this snack is perfect in every way",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/chiu-fu-ma-hwa-cookies",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "YUKI LOVE HAPPY STAR CHOCOLATE CORN CRACKER",
+    "Price": "$0.90 ",
+    "Description": "Crackle and pop with these chocolate flavored star shaped corn crackers from Yuki Love.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/yuki-love-happy-star-chocolate-corn-cracker",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "YUKI LOVE HAPPY STAR MILKY CORN CRACKER",
+    "Price": "$0.90 ",
+    "Description": "Crackle and pop with these milk flavored star shaped corn crackers from Yuki Love.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/yuki-love-happy-star-milky-corn-cracker",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "YUKI LOVE HAPPY STAR STRAWBERRY CORN CRACKER",
+    "Price": "$0.90 ",
+    "Description": "Crackle and pop with these strawberry flavored star shaped corn crackers from Yuki Love.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/yuki-love-happy-star-strawberry-corn-cracker",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "YUKI LOVE HAPPY STAR SEAWEED CORN CRACKER",
+    "Price": "$0.90 ",
+    "Description": "Crackle and pop with these seaweed flavored star shaped corn crackers from Yuki Love.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/yuki-love-happy-star-seaweed-corn-cracker",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "YUKI LOVE PEANUT MOCHI (4 PIECES)",
+    "Price": "$0.99 ",
+    "Description": "Enjoy a delicious, soft mochi filled with creamy peanut paste in Yuki Love Peanut Mochi. Each pack comes with 4 pieces.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/yuki-love-peanut-mochi-(4-pieces)",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "JACK N' JILL BBQ CHIPPY CORN CHIPS",
+    "Price": "$0.99 ",
+    "Description": "Crispy BBQ goodness in every bite! You won't be able to put them down.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/jack-jill-bbq-chippy-corn-chips",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "MORINAGA STRAWBERRY HI CHEW CANDY",
+    "Price": "$0.99 ",
+    "Description": "Hi-Chew is a the perfect go to candy for the go!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/morinaga-strawberry-hi-chew",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "MORINAGA GREEN APPLE HI CHEW CANDY",
+    "Price": "$0.99 ",
+    "Description": "Hi-Chew is a the perfect go to candy for the go!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/morinaga-apple-hi-chew",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "MORINAGA MANGO HI CHEW CANDY",
+    "Price": "$0.99 ",
+    "Description": "Hi-Chew is a the perfect go to candy for the go!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/morinaga-mango-hi-chew",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "MORINAGA GRAPE HI CHEW CANDY",
+    "Price": "$0.99 ",
+    "Description": "Hi-Chew is a the perfect go to candy for the go!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/morinaga-grape-hi-chew",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "CAP PING PONG Cheese Teddy Biscuits",
+    "Price": "$0.99 ",
+    "Description": "Easy snacking meets fun with the adorable and yummy CAP PING PONG Cheese Teddy Biscuits. A perfect snack to young children!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cap-ping-pong-cheese-teddy-biscuits",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "CAP PING PONG Chocolate Teddy Biscuits",
+    "Price": "$0.99 ",
+    "Description": "Easy snacking meets fun with the adorable and yummy CAP PING PONG Chocolate Teddy Biscuits. A perfect snack to young children!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/cap-ping-pong-chocolate-teddy-biscuits",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Meiji Vanilla Yan Yan Biscuit Snack",
+    "Price": "$0.99 ",
+    "Description": "Yan Yan are crispy biscuit sticks that you can dip in a delicious vanilla flavoured cream. The new Yan Yan – oat added biscuit stick with yogurt cream caters for the health conscious kids that can continue to enjoy Yan Yan! Yan Yan’s come in great portable cardboard containers which make it easy to enjoy your treat anywhere anytime!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/meiji-vanilla-yan-yan-biscuit-snack",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Meiji Small Strawberry Hello Panda Biscuits",
+    "Price": "$0.99 ",
+    "Description": "Hello Panda is a very popular brand of Japanese quality biscuit. Each biscuit consists of a small hollow shortbread filled with a creamy strawberry filing. These yummy biscuits are great for snacks and their convenient size makes them perfect for school lunchboxes. They are lower in sugar than many other biscuit brands and nutritionally packed with fibre a great benefit for kids and families.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/meiji-small-strawberry-hello-panda-biscuits",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Yuki Love Red Bean Mochi (4 Pieces)",
+    "Price": "$0.99 ",
+    "Description": "Soft and chewy glutinious rice filled with delicious red bean.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/yuki-love-red-bean-mochi-4-pieces",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Hello Kitty Strawberry Biscuit",
+    "Price": "$0.99 ",
+    "Description": "These crispy biscuit sticks can be dipped in delicious strawberry cream come in a portable container to be enjoyed anywhere!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/hello-kitty-strawberry-biscuit",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Meiji Yan Yan Strawberry Biscuit",
+    "Price": "$0.99 ",
+    "Description": "Yan Yan are crispy biscuit sticks that you can dip in a delicious strawberry flavoured cream. The new Yan Yan – oat added biscuit stick with yogurt cream caters for the health conscious kids that can continue to enjoy Yan Yan! Yan Yan’s come in great portable cardboard containers which make it easy to enjoy your treat anywhere anytime!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/meiji-yan-yan-strawberry-biscuit",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Hello Kitty Chocolate Biscuit",
+    "Price": "$0.99 ",
+    "Description": "These crispy biscuit sticks can be dipped in rich chocolate cream come in a portable container to be enjoyed anywhere!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/hello-kitty-chocolate-biscuit",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Marco Polo Barbeque Shrimp Snack",
+    "Price": "$0.99 ",
+    "Description": "A genuinely delightful snack! Lite crispy chips made with real shrimp rich in savory BBQ flavor. SHRIMP SNACKS taste greate by themselves or wth your favorite chip dip. Perfect as a snack or as an appetizer at lunch time parties picnics with beverages or with soup or chowders.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/marco-polo-barbeque-shrimp-snack",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Marco Polo Sour Cream Shrimp Snack",
+    "Price": "$0.99 ",
+    "Description": "Marco Polo Brand® Shrimp Snacks is a genuinely delightful Snack! Light crispy chips made with real shrimp with sour cream and onion flavor. Shrimp Snacks taste great by themselves or with your favorite chip dip. Perfect as a snack or as an appetizer at lunch time parties picnic with beverages or with soup or chowders.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/marco-polo-sour-cream-shrimp-snack",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Marco Polo Cheese Shrimp Snack",
+    "Price": "$0.99 ",
+    "Description": "Marco Polo Brand® Shrimp Snacks is a genuinely delightful Snack! Light crispy chips made with real shrimp with cheese flavor. Shrimp Snacks taste great by themselves or with your favorite chip dip. Perfect as a snack or as an appetizer at lunch time parties picnic with beverages or with soup or chowders.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/marco-polo-cheese-shrimp-snack",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Jin Jin Fruit Jelly Bag",
+    "Price": "$1.09 ",
+    "Description": "Jin Jin Tropical Mix Fruit jelly bag includes refresh tropical flavors of a sweet jellies.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/jin-jin-fruit-jelly-bag",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Sanh Yuan Mango Prune Candy",
+    "Price": "$1.09 ",
+    "Description": "Fresh and sweet, Sanh Yuan Mango Prune Candy delivers a memorable taste that is crisp on the outside and soft yet tangy on the inside.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/sanh-yuan-mango-prune-candy-",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Sanh Yuan Watermelon Prune Candy",
+    "Price": "$1.09 ",
+    "Description": "Fresh and sweet, Sanh Yuan Watermelon Prune Candy delivers a memorable taste that is crisp on the outside and soft yet tangy on the inside.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/sanh-yuan-watermelon-prune-candy",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Parrot Coconut Sandwich Biscuits",
+    "Price": "$1.19 ",
+    "Description": "Rich and bursting coconut flavor engages the senses in every bite of Parrot's Coconut Sandwich Biscuits.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/parrot-coconut-sandwich-biscuits",
+    "aisle": "snacks"
+  },
+  {
+    "ItemName": "Nongshim Shrimp Cracker",
+    "Price": "$1.19 ",
+    "Description": "Shrimp Crackers are shaped like crunchy French fries with narrow ripples. They are \\hot salted and fried\\ and are made from fresh flour and ground shrimp. You will enjoy the fresh scent of the ocean and the delicious taste of this product.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/asian-snacks/nongshim-shrimp-cracker",
     "aisle": "snacks"
   }
 ]

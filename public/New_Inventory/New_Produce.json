@@ -131,5 +131,257 @@
     "Description": "Honeydew melon gets its name from its sweet as honey taste. Refresh with this delicious fruit alone or in a smoothie or juice.",
     "Pic_URL": "https://www.99ranch.com/img/CMSImages/1392870.jpg",
     "aisle": "produce"
+  },
+  {
+    "ItemName": "Celery, 1 Count",
+    "Price": "$1.29 ",
+    "Description": "Celery is a vegetable with a crunchy texture. Known for its anti-inflammatory properties and source of antioxidants, celery aids in fighting off oxidative damage throughout organs and tissues in the body. It also provides vitamin K, folate, and potassium.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/celery,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Roma Tomato, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "Roma tomatoes are identifiable by their slightly oval shape. Known for their high lycopene content, which is thought to reduce the risk of heart disease, tomatoes are much needed in stews, soups, pizzas, pastas, stir fry dishes, and baked items.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/roma-tomato,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Baby Bok Choy, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "A staple and common face in Chinese cuisine, enjoy this juicy green vegetable with generous stems.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/baby-bok-choy,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Large Red Apple, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "Enjoy large red apples for all around nutrition and well being for the entire family.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/large-red-apple,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Chayote",
+    "Price": "$ 1.29 / Lb",
+    "Description": "A member of the gourd family, chayote is rich in dietary fiber, iron, folate, and antioxidants.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/chayote",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Kabocha, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "Fiber and beta carotene are rich in this small member of the squash family. Enjoy in soups or broiled on its own for a healthy treat.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/kabocha,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Red Onion, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "A red onion packs a wollop of folate, thiamine, calcium, and magnesium. It also is a great garnish for salads, salsas, and raw food seasoning and marinating due to its mild flavor.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/red-onion,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Chinese Eggplant, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "Chinese eggplant is a member of the zucchini family and is recognizable by its glossy, vibrantly purple skin. Enjoy this vegetable grilled or stir fried in dishes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/chinese-eggplant,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Opo, 1 Count",
+    "Price": "$ 1.29 / Lb",
+    "Description": "Opo is from the gourd family and has a very light taste that eventually bitters as it is left to mature. Opo is best served when prepared with sauce or seasoning to balance out its plain taste.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/opo,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Plaintain, 1 Count",
+    "Price": "$ 1.49 / Lb",
+    "Description": "Plaintains are delicious when cooked and served with oatmeal or enjoyed with honey as a dessert. Get a wealth of potassium, vitamin A, and niacin.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/plaintain,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Bitter Melon, 1 Count",
+    "Price": "$ 1.49 / Lb",
+    "Description": "Yes, bitter in taste, but bitter melon is hailed by many as a medicinal vegetable. It has anti-diabetic properties that help with diabetes. Its bitter taste also allows it to play a contrast with various other ingredients and sauces.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/bitter-melon,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Sunkist Orange",
+    "Price": "$ 1.49 / Lb",
+    "Description": "Experience the difference with Sunkist oranges, which feature a vivid, bright color and juicy taste.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/sunkist-orange",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "White Onion, 1 Count",
+    "Price": "$ 1.59 / Lb",
+    "Description": "White onions are an essential for any kitchen. They are the most flavorful out of all onion types, so they are ideal for all seasonings and flavorings. Grab a few today!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/white-onion,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Broccoli Crown, 1 Count",
+    "Price": "$ 1.69 / Lb",
+    "Description": "Broccoli is a versatile vegetable for all your salads, vegetable dishes, and green smoothies. Grab one for great dietary fiber, vitamin E, and potassium!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/broccoli-crown,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Small Bok Choy Sum, 1 Count",
+    "Price": "$ 1.69 / Lb",
+    "Description": "Small Bok Choy Sum is a delicious, versatile vegetable that one can use in soups, stews, casseroles, and more.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/small-bok-choy-sum,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Long Bean, 1 Count",
+    "Price": "$ 1.69 / Lb",
+    "Description": "A great companion to meat and seafood based meals, steam, sautee, or grill long beans for a delicious vegetable side.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/long-bean,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Gala Apple, 1 Count",
+    "Price": "$ 1.69 / Lb",
+    "Description": "Gala apple is a mildly sweet tasting apple. Enjoy the crisp texture and versatility in salads and recipes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/gala-apple,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Organic King Oyster Mushroom, 1 Count",
+    "Price": "$1.79 ",
+    "Description": "Enjoy Hokto's brand name king oyster mushroom, also referred to as the \"king trumpet\" for its exquisite shape. Perfect for stir fry, experience this one of a kind product for a great source of vitamin D, vitamin B1, B2, and B12.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/organic-king-oyster-mushroom,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Coconut, 1 Count",
+    "Price": "$1.89 ",
+    "Description": "Coconut is a staple in many Southeast Asian cuisines. It is also a popular ingredient for many desserts such as cakes, cookies, and pastries.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/coconut,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Hawaiian Papaya, 1 Count",
+    "Price": "$ 1.99 / Lb",
+    "Description": "Hawaiian papaya is rich in vitamins A, C, and potassium and fiber. Enjoy in various salads for a tropical kick and smooth texture.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/hawaiian-papaya,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Taro Pack, 1 Count",
+    "Price": "$ 1.99 / Lb",
+    "Description": "Taro is popular ingredient in soups, pastes, and is an increasingly common flavor for sweets and snacks. It referred by many in Southeast Asia as the \"potato of the tropics.\" Taro is good for potassium, magnesium, iron, and fiber.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/taro-pack,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Green Bean, 1 Bag",
+    "Price": "$ 1.99 / Lb",
+    "Description": "Nab nutrients such as thiamin, riboflavin, niacin, calcium, and iron with these friendly, all around green beans. They go well with many dishes and recipes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/green-bean,-1-bag",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Sweet Potato",
+    "Price": "$ 1.99 / Lb",
+    "Description": "High in fiber, sweet potatoes make a great snack and are helpful in aiding digestion.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/sweet-potato",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Lotus Root, 1 Count",
+    "Price": "$ 1.99 / Lb",
+    "Description": "Discover this unique Chinese vegetable, rich in minerals such as potassium, phosphorous, and copper. Lotus root also contains pyridoxine, which is a vitamin B complex that helps fight headaches. Enjoy lotus root marinated, stewed, and baked for a variety of Chinese specialty dishes.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/lotus-root,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Mushroom Pack, 1 Count",
+    "Price": "$2.29 ",
+    "Description": "Mushrooms are a great source of protein and minerals such as selenium, copper, niacin, and phosphorus. Add texture and variety to stir fry dishes, add protein to soups and vegetable dishes - the possibilities are endless with this versatile vegetable!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/mushroom-pack,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Organic Bunapi Mushroom, 1 Count",
+    "Price": "$2.49 ",
+    "Description": "Grown in the US by famed Japanese brand Hokto, this one of a kind mushroom does well in stir fry dishes or over the grill. Organic Bunapi mushroom, also referred to as White Beech mushroom, is a great source of vitamin D, potassium, and niacin.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/organic-bunapi-mushroom,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Organic Bunashimeji Mushroom, 1 Count",
+    "Price": "$2.49 ",
+    "Description": "Stir fry this beautiful mushroom with some oil to enjoy its nutty, buttery flavor or take it to the next level with a few dashes of seasoning sauce. 100% grown on U.S. soil, this Bunashimeji Mushroom, also known as Brown Beech, is a prized item from powerhouse name Hokto.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/organic-bunashimeji-mushroom,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Large Gai Choy, 1 Count",
+    "Price": "$ 2.49 / Lb",
+    "Description": "Enjoy this slightly mustardly tasting Asian specialty vegetable, perfect for braising or stewing. ",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/large-gai-choy,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Lemon, 1 Count",
+    "Price": "$ 2.49 / Lb",
+    "Description": "Lemon helps add a kick to your seafood, grill, and barbecue. It also is great in hot water or tea for some deep refreshment.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/lemon,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Orange Bell Pepper, 1 Count",
+    "Price": "$ 2.69 / Lb",
+    "Description": "Bell peppers are 92% water, making them a healthy snack and great source of fiber. Grill with steak or seafood for a festive feast.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/orange-bell-pepper",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Yellow Bell Pepper, 1 Count",
+    "Price": "$ 2.69 / Lb",
+    "Description": "Rich in vitamin C and bursting with flavor, yellow bell pepper is a great choice for baking, grilling, and sauteing for your healthy enjoyment.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/yellow-bell-pepper,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Purple Yam, 1 Count",
+    "Price": "$ 2.99 / Lb",
+    "Description": "Also called \"ube yams\" by some, purple yam is rich in fiber and has a higher antioxidant level than regular yams due to its vibrant purple color. Enjoy baked!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/purple-yam,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Lime, 1 Count",
+    "Price": "$ 2.99 / Lb",
+    "Description": "Season and marinate festively with lime, an essential for barbecues, marinades, and drinks. It ain't a part without lime!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/lime,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Golden Pineapple, 1 Count",
+    "Price": "$2.99 ",
+    "Description": "Enjoy tropical sweetness in every bite with our golden pineapple.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/golden-pineapple,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Young Coconut, 1 Count",
+    "Price": "$2.99 ",
+    "Description": "Young coconut is famed for its refreshing, cooling juice, which is an excellent source of electrolytes. Enjoy year round for a delicious drink",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/young-coconut,-1-count",
+    "aisle": "produce"
+  },
+  {
+    "ItemName": "Mini Seedless Watermelon, 1 Count",
+    "Price": "$ 3.49 / Lb",
+    "Description": "Sometimes the miniature versions of fruits pack the biggest punch. Savor the juicy, bursting sweetness of this mini watermelon. Seedless, it allows for easy, fuss-free eating!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/mini-seedless-watermelon,-1-count",
+    "aisle": "produce"
   }
 ]

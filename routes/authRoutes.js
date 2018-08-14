@@ -39,7 +39,7 @@ router.get('/userOrder',(req,res)=>{ //need to make this account for multiple or
   Order.findOne({orderedBy:userid})
   .then(order =>{
     console.log(order)
-    res.json({order})
+    res.json({order:order,username:req.user.username})
   })
   .catch(err =>{
     console.log(err)

@@ -138,5 +138,49 @@
     "Description": "Try some of our fresh Beef Rib Eye [Bulgogi Slice] today, you won't regret it!",
     "Pic_URL": "https://www.99ranch.com/img/CMSImages/2020458.jpg",
     "aisle": "meat"
-  }
+  },
+  {
+		"ItemName": "Lamb Rack - Frozen",
+    "Price": "$ 12.99 / Lb",
+    "Description": "Try some of our fresh Lamb Rack today, you won't regret it!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/meat/lamb-rack-frozen",
+    "aisle": "meat"
+	},
+	{
+    "ItemName": "Whole Chicken, 1 Pack",
+    "Price": "$ 12.99",
+    "Description": "This whole chicken pack allows for easy baking for holiday feasts or stewing for rich, savory soups and stews.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/meat/whole-chicken,-1-pack",
+    "aisle": "meat"
+	},
+	{
+    "ItemName": "Silky Chicken - Frozen",
+    "Price": "$ 13.99",
+    "Description": "Try some of our fresh Silky Chicken today, you won't regret it!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/meat/silky-chicken-frozen",
+    "aisle": "meat"
+	},
+	{
+		"ItemName": "Sliced Lamb",
+    "Price": "$ 15.99 / Lb",
+    "Description": "Hot pot time? Reach for sliced lamb for a unique kick and touch of variety.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/meat/sliced-lamb",
+    "aisle": "meat"
+	},
+	{
+		"ItemName": "Sliced Beef Choice Rib Eye",
+    "Price": "$ 17.99 / Lb",
+    "Description": "Whether for a boiling hot pot or a sizzling stir fry dish, sliced choice rib eye beef is an excellent choice.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/meat/sliced-beef-choice-rib-eye",
+    "aisle": "meat"
+	},
+	{
+		"ItemName": "Boneless Beef Short Rib - Frozen",
+    "Price": "$ 18.99 / Lb",
+    "Description": "Try some of our fresh Boneless Beef Short Rib today, you won't regret it!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/meat/boneless-beef-short-rib-frozen",
+    "aisle": "meat"
+	}
+  
+
 ]

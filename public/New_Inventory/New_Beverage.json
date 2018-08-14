@@ -145,5 +145,418 @@
     "Description": "Refreshment is a sip away with Kuang Chuan's famous Tea Time tea selection. Enjoy the crisp taste of this premium honey green tea.",
     "Pic_URL": "https://www.99ranch.com/img/CMSImages/3660048F.jpg",
     "aisle": "beverage"
+  },
+  {
+    "ItemName": "KUANG CHUAN TEA TIME PREMIUM HONEY CHRYSANTHEMUM TEA",
+    "Price": "$1.79 ",
+    "Description": "Refreshment is a sip away with Kuang Chuan's famous Tea Time tea selection. Enjoy the crisp taste of this premium honey chrysanthemum tea.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/kuang-chuan-tea-time-premium-chrysanthemum-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tak Shing Maltose",
+    "Price": "$1.89 ",
+    "Description": "Tak Shing Maltose is a sweetener that can replace sugar. It is great in sauces and cooked foods. Maltose is a more complex sugar that helps hydrate foods and moisten them longer.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tak-shing-maltose",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Nestle Carnation Evaporated Milk",
+    "Price": "$1.99 ",
+    "Description": "Nestle Carnation Evaporated Milk products have been helping to make creamy, rich, treasured family favorites for generations. It’s the little difference that makes all the difference.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/nestle-carnation-evaporated-milk",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "KUANG CHUAN TEA TIME DARJEELING MILK TEA",
+    "Price": "$1.99 ",
+    "Description": "Savor the delicious taste of darjeeling tea in a charming milk tea from Kuang Chuan's Tea Time line of premium milk teas.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/kuang-chuan-tea-time-darjeeling-milk-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "KUANG CHUAN TEA TIME BARLEY MILK TEA",
+    "Price": "$1.99 ",
+    "Description": "Experience a fragrant barley taste in a charming milk tea from Kuang Chuan's Tea Time line of premium milk teas.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/kuang-chuan-tea-time-barley-milk-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Trung Nguyen G7 Instant Black Coffee",
+    "Price": "$2.19 ",
+    "Description": "Finally a black G7 for those who prefer their coffee black or simply prefer to add their own cream and/or sugar to their coffee. Also mixes in cold water!",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/trung-nguyen-g7-instant-black-coffee",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CICI ORANGE FRUIT JELLY CUP (2 PACK)",
+    "Price": "$2.29 ",
+    "Description": "Cici creates some tasty fruit and jelly cups, available in a variety of fruit selections. Share with friends and family for an exquisite snack.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-orange-fruit-jelly-cup-(2-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CICI GRAPE FRUIT JELLY CUP (2 PACK)",
+    "Price": "$2.29 ",
+    "Description": "Cici creates some tasty fruit and jelly cups, available in a variety of fruit selections. Share with friends and family for an exquisite snack.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-grape-fruit-jelly-cup-(2-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CICI PEACH FRUIT JELLY CUP (2 PACK)",
+    "Price": "$2.29 ",
+    "Description": "Cici creates some tasty fruit and jelly cups, available in a variety of fruit selections. Share with friends and family for an exquisite snack.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-peach-fruit-jelly-cup-(2-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CICI MIXED FRUIT JELLY CUP (2 PACK)",
+    "Price": "$2.29 ",
+    "Description": "Cici creates some tasty fruit and jelly cups, available in a variety of fruit selections. This mixed fruit version comes with a mix of pineapple, orange, and peach in each cup. Share with friends and family for an exquisite snack.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-mixed-fruit-jelly-cup-(2-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Asian Taste Ginseng Green Tea (20 Teabags)",
+    "Price": "$2.39 ",
+    "Description": "Asian Taste Ginseng Green Tea is made from a balance of high quality ginseng and green tea leaves which blended into a pure natural drink to ease daily stress. It captured the rich aroma taht enhances delicious and refreshing taste into this convenient package. It is a great beverage choice in daily or travel consumption and is a perfect gift idea for every occasion.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/asian-taste-ginseng-green-tea-20-teabags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Kimbo Preserved Wax Gourd",
+    "Price": "$2.59 ",
+    "Description": "Kimbo Preserved Wax Gourd is a product of Taiwan and is rich in sweet wax gourd flavor. Simply melt in hot water then cool to enjoy a refreshing preserved wax gourd drink.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/kimbo-preserved-wax-gourd",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Indocafe Special Blend Coffee",
+    "Price": "$2.59 ",
+    "Description": "Indocafe Special Blend Coffee is carefully formulated and specially packed in individual sachets so you can enjoy the satisfying taste of real coffee at your own convenience.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/indocafe-special-blend-coffee",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Trung Nguyen 3 In 1 Instant Coffee (22 Count)",
+    "Price": "$2.68 ",
+    "Description": "Acclaimed by the world's coffee lovers as their beverage of choice, Trung Nguyen 3 In 1 Instant Coffee is passionately made by combining advanced European technology with Trung Nguyen's coffee expertise. Using only the best coffee beans from Buon Ma Thuot, Vietnam's Legendary basaltic region, this instant coffee provides a unique delightful aroma and exceptionally superior coffee taste.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/trung-nguyen-3-in-1-instant-coffee-22-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CASA OKINAWA BROWN SUGAR MILK TEA (10 BAGS)",
+    "Price": "$2.68 ",
+    "Description": "Premium Japanese style milk tea is only a cup away with Casa Okinawa Brown Sugar Milk Tea. Experience the sweet brown sugar taste of this delicious milk tea. Enjoy hot or cold.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/casa-okinawa-brown-sugar-milk-tea-(10-bags)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CASA NAGASAKI HONEY MILK TEA (10 BAGS)",
+    "Price": "$2.68 ",
+    "Description": "Premium Japanese style milk tea is only a cup away with Casa Nagasaki Honey Milk Tea. Experience the smooth, creamy taste of this delicious milk tea. Enjoy hot or cold.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/casa-nagasaki-honey-milk-tea-(10-bags)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CASA KYOTO MILK TEA (10 BAGS)",
+    "Price": "$2.68 ",
+    "Description": "Premium Japanese style milk tea is only a cup away with Casa Kyoto Milk Tea. Experience the delightful taste of this delicious milk tea. Enjoy hot or cold.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/casa-kyoto-milk-tea-(10-bags)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "China Slim Caffeine Free Dieter's Delight Tea (16 Count)",
+    "Price": "$2.69 ",
+    "Description": "CHINA SLIM TEA is a 100% pure and natural herbal tea. It contains no preservatives additives or caffine. This special herbal formula is uniquely blended from the highest quality herbs whose values have been established and tested in the Orient for centuries.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/china-slim-caffeine-free-dieter's-delight-tea-16-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Smaragdine Green Tea (18 Count)",
+    "Price": "$2.69 ",
+    "Description": "Allow enough dispensed space to bring out the full body of natural fragrance from the tea",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-smaragdine-green-tea-18-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Osmanthus Tea (20 Count)",
+    "Price": "$2.79 ",
+    "Description": "Tradition Osmanthus Tea is made from several different Chinese teas including black green Pouchong and oolong along with the fragrance of osmanthus flowers. Steep for just 3 minutes for a excellent cup of tea.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-osmanthus-tea-20-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Want Want Hot-Kid Milk Flavored Drink (4 Pack)",
+    "Price": "$2.79 ",
+    "Description": "Want Want Hot-Kid Milk Flavored Drink (4 Pack) is a tasty milk drink based off the famous Want Want Milk Candy. Perfect for a quick refresher on a hot day or after exercising.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/want-want-hot--kid-milk-flavored-drink-(4-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Oolong Tea (20 Count)",
+    "Price": "$2.89 ",
+    "Description": "Our Oolong Tea is a partially oxidized green tea that has qualities of both green and black tea. Packed with antioxidants Oolong Tea is rich and robust in flavor. Every batch is carefully hand inspected to ensure goodness and purity.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-oolong-tea-20-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Green Tea",
+    "Price": "$2.89 ",
+    "Description": "This tea is made from unfermented fresh green tea leaves for brisk and unique flavor with a light flower aroma. Enjoy the active and youthful tasting experience.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-green-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Hoja Verde Extra Strength Dieters' Nutri Slim Tea (12 Count)",
+    "Price": "$2.89 ",
+    "Description": "Extra Stenght Dieters' Nutri-Slim Tea is a special oriental blend of fragrant herb tea. With no chemical additives this 100% natural. ultimate herbal tea are for those who like to stay trim.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/hoja-verde-extra-strength-dieters'-nutri-slim-tea-12-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Jasmine Green Tea",
+    "Price": "$2.89 ",
+    "Description": "Allow enough dispensed space to bring out the full body of natural fragrance from the tea",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-jasmine-green-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Taiwan Oolong Tea",
+    "Price": "$2.89 ",
+    "Description": "Allow enough dispensed space to bring out the full body of natural fragrance from the tea",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-taiwan-oolong-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Hoja Verde Extra Strength Dieters' Oriental Blend Nutri Slim Tea (12 Count)",
+    "Price": "$2.89 ",
+    "Description": "Extra Stenght Dieters' Nutri-Slim Tea is a special oriental blend of fragrant herb tea. With no chemical additives this 100% natural. ultimate herbal tea are for those who like to stay trim.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/hoja-verde-extra-strength-dieters'-oriental-blend--nutri-slim-tea-12-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Chrysanthmum Pu Erh Tea",
+    "Price": "$2.89 ",
+    "Description": "Tradition pu erh tea",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-chrysanthmum-pu-erh-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Barley Tea",
+    "Price": "$2.89 ",
+    "Description": "Tradition Barley Tea combines black tea and pure barley for a clean, classic taste. Enjoy this tea on its own or paired with sweets.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-barley-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "China Slim Dieter's Delight Tea (18 Count)",
+    "Price": "$2.99 ",
+    "Description": "CHINA SLIM TEA is a 100% pure and natural herbal tea. It contains no preservatives additives or caffine. This special herbal formula is uniquely blended from the highest quality herbs whose values have been established and tested in the Orient for centuries.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/china-slim-dieter's-delight-tea-18-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Fresh Green Tea",
+    "Price": "$2.99 ",
+    "Description": "Tradition FRESH GREEN TEA is a symbol of the finest tea. Based on the strict quality control and experience of generations this tea satisfied drinkers with a consistent delicate falvour and distinctive taste of FRESH GREEN TEA.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-fresh-green-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Sunlight Preserved Winter Melon",
+    "Price": "$2.99 ",
+    "Description": "Simply dilute the winter melon rock in boiling water to create a sweet drink. Very soothing while drinking warm or refreshing when icy cold.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/sunlight-preserved-winter-melon",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Genmaicha Tea",
+    "Price": "$3.19 ",
+    "Description": "Genmaicha tea is spring harvested green tea that is fresh and delicately balanced. A healthy and nourishing tea.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-genmaicha-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Nestle Carnation Sweetened Condensed Milk",
+    "Price": "$3.19 ",
+    "Description": "Made with just milk and sugar, Nestle Carnation Sweetened Condensed Milk is ideal for baking, sweetening beverages and creating a variety of delights.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/nestle-carnation-sweetened-condensed-milk",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Jasmine Green Tea",
+    "Price": "$3.19 ",
+    "Description": "Tradition Jasmine Green Tea combines green tea with fragrant jasmine for an unparalleled tea. Enjoy this tea on its own or paired with sweets.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-jasmine-green-tea-(50-bags)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Kopiko Java 3 in 1 Instant Coffee (10 Sachets)",
+    "Price": "$3.29 ",
+    "Description": "Kopiko Java 3 in 1 Instant Coffee contains 10 individual sachets made from the best selected coffee beans. Each satchet is blended and processed in the finest way and has the perfect balance of sugar and creamer.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/kopiko-java-3-in-1-instant-coffee-10-sachets",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Tradition Rose Green Tea (50 BAGS)",
+    "Price": "$3.29 ",
+    "Description": "Tradition Rose Green Tea combines green tea with rose for aromatic tea experience enjoyed by many. Enjoy this tea on its own or paired with sweets.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/tradition-rose-green-tea-(50-bags)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "China Slim Extra Strength Dieter's Delight Tea (20 Count)",
+    "Price": "$3.29 ",
+    "Description": "CHINA SLIM TEA is a 100% pure and natural herbal tea. It contains no preservatives additives or caffine. This special herbal formula is uniquely blended from the highest quality herbs whose values have been established and tested in the Orient for centuries.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/china-slim-extra-strength-dieter's-delight-tea-20-count",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Asian Taste Oolong Tea (100 Teabags)",
+    "Price": "$3.29 ",
+    "Description": "100% natural Oolong tea product is selected and processed with Oolong tea leaves from Tianhu China. Its rich aroma greatly enhances its deliciously refreshing taste and is an excellent beverage choice for daily enjoyment.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/asian-taste-oolong-tea-100-teabags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Asian Taste Jasmine Tea (100 Teabags)",
+    "Price": "$3.29 ",
+    "Description": "100% natural Jasmine tea product is selected and processed with Jasmine tea leaves from Tianhu China. Its rich aroma greatly enhances its deliciously refreshing taste and is an excellent beverage choice for daily enjoyment.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/asian-taste-jasmine-tea-100-teabags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Asian Taste Green Tea (100 Teabags)",
+    "Price": "$3.29 ",
+    "Description": "This 100% natural Green tea product is selected and processed with green tea leaves from Tianhu China. Its rich aroma greatly enhances its deliciously refreshing taste and is an excellent bevearge choice for daily enjoyment.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/asian-taste-green-tea-100-teabags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Cici Jelly Drink (6 Pack - Version1)",
+    "Price": "$3.29 ",
+    "Description": "Cici jelly juice drink is a refreshing combination of lychee pineapple and strawberry flavored drink with bits of jelly for a unique taste.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-jelly-drink-6-pack-version-1",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Cici Jelly Drink (6 Pack - Version 2)",
+    "Price": "$3.29 ",
+    "Description": "Cici jelly juice drink is a refreshing combination of lychee mango and peach flavored drink with bits of jelly for a unique taste.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-jelly-drink-6-pack-version-2",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CICI U LOVE IT ORIGINAL MILK TEA CUP ( 4 PACK)",
+    "Price": "$3.39 ",
+    "Description": "A cup of milk tea is just a pack away! Enjoy this delicious 4 pack of Cici's original milk tea.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-u-love-it-original-milk-tea-cup-(-4-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "CICI U LOVE IT MIXED MILK TEA CUP (4 PACK)",
+    "Price": "$3.39 ",
+    "Description": "A cup of milk tea is just a pack away! Enjoy this delicious 4 pack of Cici's milk teas - two original, one wheat, and one taro.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/cici-u-love-it-mixed-milk-tea-cup-(-4-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Indocafe 3 In 1 Coffee Mix",
+    "Price": "$3.59 ",
+    "Description": "Great smooth taste of Indoneasian coffee with perfect mix of cream and sugar.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/indocafe-3-in-1-coffee-mix",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Ten Ren Jasmine Tea (20 Bags)",
+    "Price": "$3.59 ",
+    "Description": "Jasmine Tea is a famous tea made from Green or Pouchong (Chinese Green) tea leaves that are scented with jasmine flowers. The jasmine flowers are harvested during the day and stored in a cool place until night. During the night the flowers bloom with full fragrance. The flowers are layered over the tea leaves during the scenting process. The quality of Jasmine tea is determined by the quality of green tea used as its base and the effectiveness of the scenting. Ten Ren offers Jasmine tea imported from China and Taiwan in a variety of grades and modalities for your enjoyment.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/ten-ren-jasmine-tea-20-bags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Ten Ren Spice Hibiscus Tea (20 Bags)",
+    "Price": "$3.59 ",
+    "Description": "Hisbiscus Spice Tea also known as Roselle Tea is a blend of black tea and dried hibiscus flowers. When brewed it produces a reddish hue and a sweet yet slightly lemon-like taste. With its special taste it is delicious served hot or cold. Hibiscus Spice Tea is an unique blend available exclusively from Ten Ren.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/ten-ren-spice-hibiscus-tea-20-bags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Ten Ren Pu Erh Tea (20 Bags)",
+    "Price": "$3.59 ",
+    "Description": "Pu-Erh Tea is a fmaous and preferable tea in Southeast China. It is known as an after effect fermented tea. When brewed it produces a dark red color a strong full taste. Pu-Erh Tea is a special tea greatly enjoyed by tea connoisseurs both at home and abroad.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/ten-ren-pu-erh-tea-20-bags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Ten Ren Green Tea (20 Bags)",
+    "Price": "$3.59 ",
+    "Description": "Green Tea is an unfermented tea. When brewed it produces a light greenish-yellow hue a fresh flavor and a pure aroma. Green tea may maintain good health. Whether you are at work or at play this tea is perfect for any occasion.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/ten-ren-green-tea-20-bags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Ten Ren Jasmine Oolong Tea (20 Bags)",
+    "Price": "$3.59 ",
+    "Description": "Jasmine Oolong Tea is a selected blend of tea form tender Oolong tea leaves and scented with Jasmine petals. Enjoy a cup of Jasmine Oolong Tea for its unique taste and fresh aroma. Only Ten Ren Tea offers this extra ordinary blend.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/ten-ren-jasmine-oolong-tea-20-bags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Vita Lemon Tea",
+    "Price": "$3.69 ",
+    "Description": "Vita Lemon Tea provides irreplaceable taste with prefect balance between lemon and tea",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/vita-lemon-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Vita Chrysanthemum Tea",
+    "Price": "$3.69 ",
+    "Description": "Vita Chrysanthemum Tea selectes high quality chrysanthemum and tries to prvide realistic taste",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/vita-chrysanthemum-tea",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Vita Soy Soydrink",
+    "Price": "$3.69 ",
+    "Description": "Vitasoy soydrink contains proteins, it helps to provide daily protein need with sweeten taste, it is prefect for breakfast",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/vita-soy-soydrink",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Vitasoy Malt Soy Drink",
+    "Price": "$3.69 ",
+    "Description": "Vitasoy Malt Soy Drink contains proteins, it helps to provide daily protein need with sweeten malt flavor, it is prefect for breakfast",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/vitasoy-malt-soy-drink",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "I MEI BROWN RICE MILK DRINK (6 PACK)",
+    "Price": "$3.69 ",
+    "Description": "Refreshing and sweet, I Mei's Brown Rice Milk Drink is perfect to share with loved ones. Comes in a fun 6 pack for easy sharing.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/i-mei-brown-rice-milk-drink-(6-pack)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "GREENMAX MILKY TEA (10 BAGS)",
+    "Price": "$3.79 ",
+    "Description": "Greenmax presents a black tea based milk tea for your enjoyment. With 10 bags per box, this delicious drink can be shared between family, friends, coworkers, and anyone for a refreshing beverage. Enjoy hot or cold.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/greenmax-milky-tea-(10-bags)",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Pantai Thai Tea (20 Bags)",
+    "Price": "$3.79 ",
+    "Description": "Each tea bag is quality sealed in our air-tight fresh pack pouch for flavorful taste and aroma in every cup you brew. Thai tea is finely prepared from speical tea leaves grown in the lush green mountains of Chiang-Mai province in northern Thailand. Carefully picked at the peak of harvesting these tea leaves are processed immediately to capture for you the freshness and purity that only nature can produce.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/pantai-thai-tea-20-bags",
+    "aisle": "beverage"
+  },
+  {
+    "ItemName": "Hoja Verde Extra Strength Dieters' Nutri Slim Tea (30 Count)",
+    "Price": "$3.89 ",
+    "Description": "Extra Stenght Dieters' Nutri-Slim Tea is a special oriental blend of fragrant herb tea. With no chemical additives this 100% natural. ultimate herbal tea are for those who like to stay trim. Comes with 30 tea bags.",
+    "Pic_URL": "https://www.99ranch.com/storeproduct/beverages/hoja-verde-extra-strength-dieters'-nutri-slim-tea-30-count",
+    "aisle": "beverage"
   }
 ]
