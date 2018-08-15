@@ -36,12 +36,16 @@ const orderSchema = new Schema({
     required: true
   },
   contactInfo: {
-    name: String,
+    userName: String,
     phone: String,
   },
   address:{
     type:String,
     required: true
+  },
+  ZIP:{
+    type:String,
+    required:true
   },
   time: {
     type: Date,

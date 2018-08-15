@@ -48,6 +48,8 @@ router.get('/userOrder',(req,res)=>{
   })
 })
 
+
+
 //ORDER - save order in database
 router.post('/Order',(req,res) => {
   console.log('body', req.body);
@@ -55,7 +57,10 @@ router.post('/Order',(req,res) => {
     totalPrice:req.body.totalPrice,
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
-    items: req.body.items
+    items: req.body.items,
+    ZIP:req.body.ZIP,
+    userName:req.body.userName,
+    phone:req.body.phone
   })
 
   newOrder.save()
