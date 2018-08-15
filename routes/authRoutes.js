@@ -59,6 +59,7 @@ router.post('/Order',(req,res) => {
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
     items: req.body.items,
+    phone:req.body.phone
  
   })
 
