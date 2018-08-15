@@ -55,10 +55,11 @@ router.post('/Order',(req,res) => {
   console.log('body', req.body);
   const newOrder = new Order({
     totalPrice:req.body.totalPrice,
+    ZIP:req.body.ZIP,
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
     items: req.body.items,
-    ZIP:req.body.ZIP
+ 
   })
 
   newOrder.save()
