@@ -38,6 +38,9 @@ const orderSchema = new Schema({
   phone:{
       type:String 
   },
+  userName:{
+    type:String
+  },
   address:{
     type:String,
     required: true
