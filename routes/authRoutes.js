@@ -37,7 +37,7 @@ router.use(function(req, res, next) {
 router.get('/userOrder',(req,res)=>{ //need to make this account for multiple orders
   let userid = req.user._id;
   console.log('userid',userid);
-  Order.findOne({orderedBy:userid})
+  Order.find({orderedBy:userid})
   .then(order =>{
     console.log(order)
     res.json({order:order,username:req.user.username})
