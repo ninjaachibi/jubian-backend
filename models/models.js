@@ -44,7 +44,6 @@ const orderSchema = new Schema({
   },
   ZIP:{
     type:String,
-    required:true
   },
   time: {
     type: Date,
