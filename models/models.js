@@ -35,13 +35,18 @@ const orderSchema = new Schema({
     ref: 'User',
     required: true
   },
-  contactInfo: {
-    name: String,
-    phone: String,
+  phone:{
+      type:String 
+  },
+  userName:{
+    type:String
   },
   address:{
     type:String,
     required: true
+  },
+  ZIP:{
+    type:String,
   },
   time: {
     type: Date,

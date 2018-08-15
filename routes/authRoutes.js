@@ -32,6 +32,7 @@ router.use(function(req, res, next) {
 });
 
 
+
 //USERORDER
 router.get('/userOrder',(req,res)=>{ //need to make this account for multiple orders
   let userid = req.user._id;
@@ -47,14 +48,20 @@ router.get('/userOrder',(req,res)=>{ //need to make this account for multiple or
   })
 })
 
+
+
 //ORDER - save order in database
 router.post('/Order',(req,res) => {
   console.log('body', req.body);
   const newOrder = new Order({
     totalPrice:req.body.totalPrice,
+    userName:req.body.userName,
+    ZIP:req.body.ZIP,
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
+    phone:req.body.phone,
     items: req.body.items
+ 
   })
 
   newOrder.save()

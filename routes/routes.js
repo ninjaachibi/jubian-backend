@@ -87,7 +87,6 @@ router.get('/browse', (req,res) => {
   console.log('aisle', aisle);
   GroceryItem.find({aisle})
   .then(items => {
-    console.log(items);
     res.json({items})
   })
   .catch(err => {
@@ -103,7 +102,7 @@ router.get('/searchItem',(req,res) =>{
   console.log('query', searchItem);
   GroceryItem.find({name: {$regex : searchItem, $options: 'i'}})
   .then(items => {
-    console.log(items);
+    // console.log(items);
     res.json({items})
   })
   .catch(err => {
