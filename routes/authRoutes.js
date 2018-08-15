@@ -58,8 +58,8 @@ router.post('/Order',(req,res) => {
     ZIP:req.body.ZIP,
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
-    items: req.body.items,
-    phone:req.body.phone
+    phone:req.body.phone,
+    items: req.body.items
  
   })
 
