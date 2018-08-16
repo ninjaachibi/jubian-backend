@@ -132,11 +132,19 @@
     "Pic_URL": "https://www.99ranch.com/img/CMSImages/1392870.jpg",
     "aisle": "produce"
   },
+
+
+
+
+
+
+
+
   {
     "ItemName": "Celery, 1 Count",
     "Price": "$1.29 ",
     "Description": "Celery is a vegetable with a crunchy texture. Known for its anti-inflammatory properties and source of antioxidants, celery aids in fighting off oxidative damage throughout organs and tissues in the body. It also provides vitamin K, folate, and potassium.",
-    "Pic_URL": "https://www.99ranch.com/storeproduct/produce/celery,-1-count",
+    "Pic_URL": "https://www.99ranch.com/ul/products/PickupStores/5019/1370460%20(2)800x800.png",
     "aisle": "produce"
   },
   {
@@ -165,7 +173,7 @@
     "Price": "$ 1.29 / Lb",
     "Description": "A member of the gourd family, chayote is rich in dietary fiber, iron, folate, and antioxidants.",
     "Pic_URL": "https://www.99ranch.com/storeproduct/produce/chayote",
-    "aisle": "produce"
+    "aisle": "produce" 
   },
   {
     "ItemName": "Kabocha, 1 Count",

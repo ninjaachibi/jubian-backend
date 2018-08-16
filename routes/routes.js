@@ -8,7 +8,6 @@ import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
 
 
-
 //AUTH ROUTES
 router.post('/register', (req, res) => {
   console.log('body', req.body);
@@ -264,6 +263,26 @@ router.post('/driverRegister', (req, res) => {
 
 //RenderAvaliableOrder
 //router.post('/selectOrder',)
+
+//DriverOrders
+router.get('/driverOrders', function(req,res){
+  Order.find({},function(err,order){
+    if (err) {
+      console.error(err);
+      res.json({
+        success:false,
+        message: "Error!" + err
+      });
+    }
+    else{
+      res.json({
+        success:true,
+        order
+      })
+    }
+  })
+   
+  })   
 
 
 
