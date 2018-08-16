@@ -12,6 +12,9 @@ const userSchema = new Schema({
   },
   email:{
     type: String,
+  },
+  phone: {
+    type: String,
   }
 });
 
@@ -36,7 +39,7 @@ const orderSchema = new Schema({
     required: true
   },
   phone:{
-      type:String 
+      type:String
   },
   userName:{
     type:String
