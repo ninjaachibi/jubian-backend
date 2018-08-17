@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 const app = express();
 import routes from './routes/routes.js'
 import authRoutes from './routes/authRoutes.js';
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 import path from 'path';
 import logger from 'morgan';
 import { User, GroceryItem, Order, Driver } from './models/models.js'
@@ -23,6 +23,13 @@ mongoose.connection.on('connected', function() {
   console.log('mong',process.env.API_KEY)
 })
 
+const allowCrossDomain = function(req, res,next) {
+  res.header('Access-Control-Allow-Origin', 'https://goldenexpress-driver.herokuapp.com/');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+}
+
+app.use(allowCrossDomain)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
