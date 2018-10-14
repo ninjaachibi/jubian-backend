@@ -157,7 +157,7 @@ router.post('/travelTime', async(req,res)=>{
 
   axios.get('https://maps.googleapis.com/maps/api/directions/json', {
     params: {
-      key: process.env.API_KEY,
+      key: process.env.API_KEY, //google API_KEY
       origin:req.body.origin,
       waypoints: splitWaypoints(locationArray),
       destination: req.body.destination,
