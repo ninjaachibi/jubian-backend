@@ -1,1 +1,1 @@
-web: npm run babel-node ./server.js
+web: npm start
