@@ -7,6 +7,17 @@ import { User, GroceryItem, Order, Driver } from '../models/models.js'
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
 
+//test getting users
+router.get('/users', (req,res) => {
+  console.log('getting users')
+  User.find()
+    .then((users) => {
+      console.log('users',users);
+    })
+    .catch((err) => {
+      console.log('ERROR',err);
+    });
+})
 
 //AUTH ROUTES
 router.post('/register', (req, res) => {
@@ -283,8 +294,8 @@ router.get('/driverOrders', function(req,res){
       })
     }
   })
-   
-  })   
+
+  })
 
 
 
