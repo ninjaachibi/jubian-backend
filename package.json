@@ -9,7 +9,7 @@
     "serve": "node dist/index.js",
     "babel-node": "babel-node --presets es2015,stage-0",
     "start:dev": "nodemon --exec npm run babel-node -- ./server.js",
-    "start": "npm run babel-node ./server.js", 
+    "start": "npm run babel-node ./server.js",
     "script": "npm run babel-node scripts.js"
   },
   "author": "",
