@@ -13,6 +13,9 @@ router.get('/users', (req,res) => {
   User.find()
     .then((users) => {
       console.log('users',users);
+      res.json({
+        users: users
+      })
     })
     .catch((err) => {
       console.log('ERROR',err);
