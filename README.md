@@ -102,7 +102,7 @@ And the API returns:
 
 
 ### POST /register
-Registers a new user. If the users already exists, returns an error.
+Registers a new user. If the username already exists, returns an error.
 
 The request body needs to be sent as json object in your `fetch` or `ajax` call!
 This is what a sample fetch call from the mobile app frontend looks like:
@@ -148,16 +148,109 @@ The return `json` object looks like:
 }
 ```
 
-
 ## Search
-### GET /search 
 ### GET /browse
+Browses our aisles for food! 
+We have these aisles: `beverage`, `canned`, `dried`, `instant`, `meat`, `noodles`, `powder-mix`, `produce`, `seafood`, `spices`, and `snack`.
+
+Let's browse the `meat` aisle.
+
+Since it's a `GET` request, we put the query in the URL. 
+
+Sample frontend code: 
+
+```javascript
+  browseAisle (aisle) {
+    fetch('https://golden-express.herokuapp.com/browse' + `?aisle=${aisle.toLowerCase()}`)
+    .then((resp) => resp.json())
+    .then(resp => {
+      ...
+    })
+  }
+```
+
+`GET https://golden-express.herokuapp.com/browse?aisle=meat` returns:
+
+```
+{
+    "items": [
+        {
+            "_id": "5b6403649917880124e778b2",
+            "name": "Sliced Pork Hock",
+            "price": "$ 1.89 / Lb",
+            "description": "Sliced pork hock is a good choice for a smoked meat or a stewed dish.",
+            "imgURI": "https://www.99ranch.com/img/CMSImages/1515176.jpg",
+            "aisle": "meat",
+            "__v": 0
+        },
+        {
+            "_id": "5b6403649917880124e778b1",
+            "name": "Pork Chine Bone",
+            "price": "$ 0.99 / Lb",
+            "description": "Roast pork chine bone well for a delicious, flavorful center dish for any dinner or festive occasion.",
+            "imgURI": "https://www.99ranch.com/img/CMSImages/1310680.jpg",
+            "aisle": "meat",
+            "__v": 0
+        },
+        {
+            "_id": "5b6403649917880124e778b3",
+            "name": "Stewing Chicken",
+            "price": "$ 2.19 / Lb",
+            "description": "This chicken is great for - you guessed it - stewing. Boil this chicken for a rich and savory chicken broth.",
+            "imgURI": "https://www.99ranch.com/img/CMSImages/1338160.jpg",
+            "aisle": "meat",
+            "__v": 0
+        },
+	...
+	]}
+```
+
+### GET /searchItem
+Similar to `GET /browse`, `GET /searchItem` returns the results of a query, but this endpoint matches for the query using regex.
+
+`GET https://golden-express.herokuapp.com/searchItem?searchItem=chicken`
+
+```
+{
+    "items": [
+        {
+            "_id": "5b6403639917880124e77872",
+            "name": "Kimbo Chicken Broth",
+            "price": "$ 0.99 / EA",
+            "description": "Count on Kimbo Chicken Broth for all your soup and cooking needs. Exceptional, rich chicken taste guarantees the best outcome for whatever recipe you have on hand!",
+            "imgURI": "https://www.99ranch.com/ul/products/2231/3608689_1%20(1).jpg",
+            "aisle": "canned",
+            "__v": 0
+        },
+        {
+            "_id": "5b6403649917880124e778b3",
+            "name": "Stewing Chicken",
+            "price": "$ 2.19 / Lb",
+            "description": "This chicken is great for - you guessed it - stewing. Boil this chicken for a rich and savory chicken broth.",
+            "imgURI": "https://www.99ranch.com/img/CMSImages/1338160.jpg",
+            "aisle": "meat",
+            "__v": 0
+        },
+        {
+            "_id": "5b6403649917880124e778b6",
+            "name": "Chicken Leg Meat",
+            "price": "$ 2.99 / Lb",
+            "description": "Craving something braised and savory? Taiwanese cuisine often has braised chicken leg meat for a variety of dishes. Purchase some chicken leg meat today.",
+            "imgURI": "https://www.99ranch.com/img/CMSImages/1535325.jpg",
+            "aisle": "meat",
+            "__v": 0
+        },
+	...
+	]}
+```
+
+As you can see, there are all kinds of products returned that all have chicken in the name!
 
 ## Payments and Stripe
 ### POST /payments
 
 ## Drivers
-### POST /travelTime
+### POST /travelTime (experimental, do not use)
 ### POST /driverRegistration
 ### POST /driverLogin
 ### GET /driverOrders
