@@ -67,7 +67,7 @@ And the API returns:
 ```
 
 - `userId` is the Id of the user in our database. If you look closely, the `userId` that's returned matches the one for *robert* from the `/users` endpoint
-- `token` is the JWT that's returned. We should save it because it's important for `/Order` and `/userOrder`, so save it in `AsyncStorage` or `LocalStorage`. Here's the code that was used from the original mobile app:
+- `token` is the JWT that's returned. We should save it because it's important for `/Order` and `/userOrder` endpoints later, so save it in `AsyncStorage` or `LocalStorage`. Here's the code that was used from the original mobile app:
 
 ```javascript
     fetch('https://golden-express.herokuapp.com/login', {
@@ -202,7 +202,6 @@ Sample frontend code:
             "__v": 0
         },
 	...
-	]}
 ```
 
 ### GET /searchItem
@@ -244,7 +243,7 @@ Similar to `GET /browse`, `GET /searchItem` returns the results of a query, but 
 	]}
 ```
 
-As you can see, there are all kinds of products returned that all have chicken in the name!
+As you can see, there are all kinds of products returned that all have *chicken* in the name!
 
 ## Payments and Stripe
 ### POST /payments
