@@ -6,7 +6,7 @@ async function getCoords(rawAddress){
     console.log('process.env', process.env);
     let geocode = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
             params: {
-            key: 'AIzaSyD7-ek99fLBnxHKwsNacl03xSN6QhnuGlg', //put it in process.env
+            key: process.env.API_KEY, //put it in process.env
             address: address,
             },
         }).then(response => response.data.results[0].geometry.location, 
