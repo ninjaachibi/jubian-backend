@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
-import { User, Order } from '../models/models.js'
+import { User, Order } from '../models/models.js';
+import getCoords from '../gmaps/geocoding.js';
 
 router.use(function(req, res, next) {
   var token = req.headers.authorization;
@@ -51,8 +52,18 @@ router.get('/userOrder',(req,res)=>{ //need to make this account for multiple or
 
 
 //ORDER - save order in database
-router.post('/Order',(req,res) => {
-  console.log('body', req.body);
+router.post('/Order', async (req,res) => {
+  console.log('body', req.body, '\n\n');
+
+  let geocode = await getCoords(req.body.address);
+  // console.log(geocode);
+
+  let items = req.body.items.map(i => {
+    let obj = JSON.parse(i);
+    return obj;
+  });
+  // console.log('items', items, '\n\n');
+
   const newOrder = new Order({
     totalPrice:req.body.totalPrice,
     userName:req.body.userName,
@@ -60,8 +71,9 @@ router.post('/Order',(req,res) => {
     orderedBy: req.user._id, //need to change this to client userId
     address:req.body.address,
     phone:req.body.phone,
-    items: req.body.items
- 
+    geocode: geocode,
+    items: items,
+    // items: req.body.items,
   })
 
   newOrder.save()
@@ -73,19 +85,7 @@ router.post('/Order',(req,res) => {
     console.log('error',err);
     res.json({success: false, message: 'error message:' + err.message})
   })
-
-    //   Order.find({})
-    //   .populate('orderedBy')
-    //   .exec(function(error, orders) {
-    //     console.log(JSON.stringify(orders, null, "\t"))
-    //   })
-
 })
-
-
-
-
-
 
 
 export default router;

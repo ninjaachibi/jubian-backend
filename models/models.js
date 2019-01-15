@@ -69,9 +69,16 @@ const orderSchema = new Schema({
         required: true,
       }
     }
-  ]
-
-
+  ],
+  status: {
+    type: String,
+    enum: ["ordered", "in delivery", "delivered"],
+    required: true,
+    default: "ordered",
+  },
+  geocode: {
+    type: Object
+  }
 });
 
 
