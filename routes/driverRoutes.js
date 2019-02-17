@@ -70,7 +70,7 @@ router.post('/login',(req,res) =>{
     //if authorization succeeds
     res.json({
       success: true,
-      driverId: user._id
+      driverInfo: user
     })
   }
 });
@@ -79,33 +79,61 @@ router.post('/login',(req,res) =>{
 //Driver Orders
 router.get('/orders',(req,res) =>{
   console.log('orders', req.body)
-  Order.find({status:"ordered"}, function(err, orders){
+  Order.find({ status:{$in: ['ordered', 'in delivery']} })
+       .populate('orderedBy')
+       .exec(function(err, orders){
+          if (err) {
+            console.error(err);
+            res.json({
+              success:false,
+              message: "Error!" + err
+            });
+          } 
+          else if (!orders) {
+            console.log('order', orders);
+            res.json({
+              success:false,
+              message: "No orders"
+            });
+          }
+          else {
+            console.log('orders', orders);
+            res.json({
+              success:true,
+              orders: orders
+            })
+          }
+       })
+});
+
+
+// Update selected order
+router.post('/order/update', (req, res) => {
+  let orderId = req.body.orderId;
+  console.log('updating order', orderId);
+
+  let update = { status: req.body.status }
+  Order.findByIdAndUpdate(orderId, update, { new: true }, function(err, order){
     if (err) {
       console.error(err);
       res.json({
         success:false,
         message: "Error!" + err
       });
-    } 
-    else if (!orders) {
+    } else if (!order) {
       console.log('order', order);
       res.json({
         success:false,
-        message: "No orders"
+        message: "No order"
       });
-    }
-    else {
+    } else {
       res.json({
         success:true,
-        orders: orders
+        order: order
       })
     }
   })
-});
-
-
-//RenderAvaliableOrder
-//router.post('/selectOrder',)
+})
 
 
 

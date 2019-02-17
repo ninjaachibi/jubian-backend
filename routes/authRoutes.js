@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
 import { User, Order } from '../models/models.js';
-import getCoords from '../gmaps/geocoding.js';
+import getCoords from '../maps/geocoding.js';
 
 router.use(function(req, res, next) {
   var token = req.headers.authorization;
@@ -56,8 +56,8 @@ router.post('/Order', async (req,res) => {
   console.log('body', req.body, '\n\n');
 
   let geocode = await getCoords(req.body.address);
-  // console.log(geocode);
 
+  // console.log('items', req.body.items);
   let items = req.body.items.map(i => {
     let obj = JSON.parse(i);
     return obj;
@@ -73,7 +73,10 @@ router.post('/Order', async (req,res) => {
     phone:req.body.phone,
     geocode: geocode,
     items: items,
-    // items: req.body.items,
+    deliveryLogistics: {
+      date: req.body.deliveryLogistics.date,
+      time: req.body.deliveryLogistics.time
+    }
   })
 
   newOrder.save()

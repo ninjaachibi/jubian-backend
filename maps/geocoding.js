@@ -4,12 +4,12 @@ async function getCoords(rawAddress){
     let address = rawAddress.split(' ').join('+');
     console.log('address', address);
     console.log('process.env', process.env);
-    let geocode = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+    let geocode = await axios.get('http://www.mapquestapi.com/geocoding/v1/address', {
             params: {
-            key: process.env.API_KEY, //put it in process.env
-            address: address,
+            key: process.env.API_KEY,
+            location: address,
             },
-        }).then(response => response.data.results[0].geometry.location, 
+        }).then(response => response.data.results[0].locations[0].displayLatLng, 
                 error => console.error(error));
     return geocode;
 }
