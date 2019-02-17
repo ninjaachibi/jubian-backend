@@ -251,11 +251,210 @@ As you can see, there are all kinds of products returned that all have *chicken*
 ## Drivers
 ### POST /travelTime (experimental, do not use)
 ### POST /driverRegistration
-### POST /driverLogin
-### GET /driverOrders
+### POST /driver/login
+Logs a driver in.
+
+Let's say I want to login as the driver *ray*. In request body I send:
+```
+{
+	"username": "ray",
+	"password": "ray"
+}
+```
+And the API returns:
+```
+{
+    "success": true,
+    "driverInfo": {
+        "_id": "5c40283d272d86503d7730e5",
+        "username": "ray",
+        "password": "ray",
+        "__v": 0
+    }
+}
+```
+
+- `_id` is the Id of the user in our database. 
+
+```javascript
+    fetch('http://localhost:3000/driver/login',{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: userValues.username,
+                password: userValues.password
+            })
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log('response', response);
+            if (response.success){
+                dispatch(loginIsLoading(false));
+                dispatch(loginSuccess({
+                    driverId: response.driverInfo._id,
+                    name: response.driverInfo.username
+                }));
+            } else {
+                dispatch(loginIsLoading(false));
+                dispatch(loginFailed('invalid user'));
+            }
+        })
+        .catch(error => {
+            // If any other error occurs
+            dispatch(loginIsLoading(false));
+            dispatch(loginFailed(error));
+        });
+```
+### GET /driver/orders
+Returns all orders that is has not been delivered.
+
+An example response:
+```
+{
+    "success": true,
+    "orders": [
+        {
+            "deliveryLogistics": {
+                "date": "2019-02-17T17:42:08.868Z",
+                "time": "17:00"
+            },
+            "orderTime": "2019-02-17T17:47:33.123Z",
+            "status": "ordered",
+            "_id": "5c699e3c548a051bfa6d9ca9",
+            "totalPrice": 15,
+            "ZIP": "06269",
+            "orderedBy": {
+                "_id": "5c1c195d2204d1001ea3e1ca",
+                "username": "robert",
+                "password": "password",
+                "phone": "5555555555",
+                "email": "robert.luo@goldenexpress.org",
+                "__v": 0
+            },
+            "address": "2384 Alumni Dr, Storrs, CT",
+            "phone": "1234567890",
+            "geocode": {
+                "lat": 41.80703,
+                "lng": -72.25861
+            },
+            "items": [
+                {
+                    "_id": "5c699e3c548a051bfa6d9cab",
+                    "name": "Asian Taste Jasmine Tea (20 Teabags)",
+                    "count": 2,
+                    "itemId": "5b6403639917880124e7786e"
+                },
+                ...
+            ],
+            "__v": 0
+        },
+        ...
+    ]
+}
+```
+### POST /driver/order/update
+Allows drivers to make changes to the status of the delivery.
+
+There are three options for status: 1) "ordered" 2) "in delivery" 3) "delivered".
+The default option is "ordered".
+
+For example, the request body would be:
+```
+{
+	"orderId": "5c699e3c548a051bfa6d9ca9",
+  "status": "delivered"
+}
+```
+And the API returns:
+```
+{
+  "success": true,
+  order: {... order details ...}
+}
+```
 
 # Do Need JWT Authentication
 
 ## Orders
 ### GET /userOrder
 ### POST /Order (note order is caps)
+This route saves the user's order to the database.
+
+The request model is as follows:
+```
+{
+  totalPrice: Number, [required]
+  orderedBy: User, [required]
+  phone: String, [required]
+  address: String, [required]
+  ZIP:String, [required]
+  deliveryLogistics:{
+    date: Date, [required]
+    time: String, [required, options are: ["17:00", "17:30", "18:00", "18:30", "19:00"]]
+  },
+  items:[
+    {
+      name: String,
+      count: Number,
+      itemId: GroceryItemId
+    }
+  ],
+  status: String, [required, options are ["ordered", "in delivery", "delivered"]],
+}
+```
+
+For example, the request body would be:
+```
+{
+	"address": "917 Tower Ct Rd, Storrs, CT 06268",
+  "userName": "ray", 
+  "ZIP": 06269,
+  "phone": 1234567890,
+  "items":[
+    {"name": "Yellow Bell Pepper, 1 Count", "count": 2, "itemId":"5b74a27b490fcc4ad80fbe8c"},{"name": "Organic Bunapi Mushroom, 1 Count", "count": 3, "itemId": "5b74a27b490fcc4ad80fbe87"},
+    ...
+  ],
+  "totalPrice": 15.34,
+  "deliveryLogistics": {
+    "date":2019-02-17T17:42:08.868Z
+    "time": "18:00"
+  }
+}
+```
+And the API returns:
+```
+{
+    "success": true,
+    "order": {
+        "deliveryLogistics": {
+            "date": "2019-02-17T17:42:08.868Z",
+            "time": "18:00"
+        },
+        "orderTime": "2019-02-17T17:47:33.123Z",
+        "status": "ordered",
+        "_id": "5c69bc57548a051bfa6d9caf",
+        "totalPrice": 15.34,
+        "ZIP": "06269",
+        "orderedBy": "5c1c19a82204d1001ea3e1cb",
+        "address": "917 Tower Ct Rd, Storrs, CT 06268",
+        "phone": "1234567890",
+        "geocode": {
+            "lat": 41.81729,
+            "lng": -72.26559
+        },
+        "items": [
+            {
+                "_id": "5c69bc57548a051bfa6d9cb2",
+                "name": "Yellow Bell Pepper, 1 Count",
+                "count": 2,
+                "itemId": "5b74a27b490fcc4ad80fbe8c"
+            },
+            ...
+        ],
+        "__v": 0
+    }
+}
+```
+
