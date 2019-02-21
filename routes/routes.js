@@ -2,6 +2,8 @@ var axios = require('axios');
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 import { User, GroceryItem, Order, Driver } from '../models/models.js'
 import Stripe from 'stripe';
@@ -11,7 +13,7 @@ const stripe = Stripe(process.env.STRIPE_API_KEY);
 router.post('/register', (req, res) => {
   console.log('body', req.body);
   User.findOne({username: req.body.username})
-  .then((user) => {
+  .then(async (user) => {
     console.log('user', user);
     if(user) {
       res.json({
@@ -20,24 +22,27 @@ router.post('/register', (req, res) => {
       })
     }
     else {
-      const newUser = new User({
-        username: req.body.username,
-        password: req.body.password,
-        phone: req.body.phone,
-        email: req.body.email,
-      });
-      newUser.save()
-      .then(user => {
-        res.json({
-          success: true,
-          message: `Successfully registered a new user: ${user.username}!`
+      bcrypt.hash(req.body.password, saltRounds)
+      .then((hash)=>{
+        const newUser = new User({
+          username: req.body.username,
+          password: hash,
+          phone: req.body.phone,
+          email: req.body.email,
         });
-      })
-      .catch(error => {
-        res.json({
-          success: false,
-          message: `Error: ${error}`
-        });
+        newUser.save()
+        .then(user => {
+          res.json({
+            success: true,
+            message: `Successfully registered a new user: ${user.username}!`
+          });
+        })
+        .catch(error => {
+          res.json({
+            success: false,
+            message: `Error: ${error}`
+          });
+        })
       })
     }
   })
@@ -60,24 +65,27 @@ router.post('/login',(req,res) =>{
         message: "Invalid user"
       });
     }
-    //if passwords don't match, authorization failed
-    else if (user.password !== req.body.password) {
-      res.json({
-        success: false,
-        message:"Incorrect password"
-      })
-    }
-    else{ console.log({user:req.body})
-    //if authorization succeeds
-    res.json({
-      success: true,
-      userId: user._id,
-      token: jwt.sign(
-        { _id: user._id, username: user.username },
-        process.env.JWT_SECRET,
-        { expiresIn: '1d' })
-      })
-    }
+
+    bcrypt.compare(req.body.password, user.password)
+    .then((hash)=>{
+      if (hash) {
+        // if authorization succeeds
+        res.json({
+          success: true,
+          userId: user._id,
+          token: jwt.sign(
+            { _id: user._id, username: user.username },
+            process.env.JWT_SECRET,
+            { expiresIn: '1d' })
+        })
+      } else {
+        // passwords don't match, authorization failed
+        res.json({
+          success: false,
+          message:"Incorrect password"
+        })
+      }
+    })
   });
 });
 
