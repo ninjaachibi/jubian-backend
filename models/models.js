@@ -64,6 +64,14 @@ const orderSchema = new Schema({
       required: true
     }
   },
+  deliveredBy: {
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'Driver'
+  },
+  purchasedBy: {
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'Driver'
+  },
   items:[
     {
       name: String,

@@ -2,10 +2,10 @@ var axios = require('axios');
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
-import { User, GroceryItem, Order, Driver } from '../models/models.js'
-import Stripe from 'stripe';
-const stripe = Stripe(process.env.STRIPE_API_KEY);
+import { Order, Driver } from '../models/models.js'
 
 //Driver Register
 router.post('/register', (req, res) => {
@@ -20,22 +20,25 @@ router.post('/register', (req, res) => {
         })
       }
       else {
-        const newDriver = new Driver({
-          username: req.body.username,
-          password: req.body.password
-        });
-        newDriver.save()
-        .then(user => {
-          res.json({
-            success: true,
-            message: `Successfully registered a new driver: ${user.username}!`
+        bcrypt.hash(req.body.password, saltRounds)
+        .then((hash)=>{
+          const newDriver = new Driver({
+            username: req.body.username,
+            password: hash
           });
-        })
-        .catch(error => {
-          res.json({
-            success: false,
-            message: `Error: ${error}`
-          });
+          newDriver.save()
+          .then(user => {
+            res.json({
+              success: true,
+              message: `Successfully registered a new driver: ${user.username}!`
+            });
+          })
+          .catch(error => {
+            res.json({
+              success: false,
+              message: `Error: ${error}`
+            });
+          })
         })
       }
     })
@@ -59,20 +62,29 @@ router.post('/login',(req,res) =>{
         message: "Invalid user"
       });
     }
-    //if passwords don't match, authorization failed
-    else if (user.password !== req.body.password) {
-      res.json({
-        success: false,
-        message:"Incorrect password"
-      })
-    }
-    else{ console.log({user:req.body})
-    //if authorization succeeds
-    res.json({
-      success: true,
-      driverInfo: user
+    bcrypt.compare(req.body.password, user.password)
+    .then((hash)=>{
+      if (hash) {
+        // if authorization succeeds
+        res.json({
+          success: true,
+          driverInfo: {
+            _id: user._id,
+            username: user.username
+          },
+          token: jwt.sign(
+            { _id: user._id, username: user.username },
+            process.env.JWT_SECRET,
+            { expiresIn: '1d' })
+        })
+      } else {
+        // passwords don't match, authorization failed
+        res.json({
+          success: false,
+          message:"Incorrect password"
+        })
+      }
     })
-  }
 });
 });
 
@@ -105,37 +117,5 @@ router.get('/orders',(req,res) =>{
           }
        })
 });
-
-
-// Update selected order
-router.post('/order/update', (req, res) => {
-  let orderId = req.body.orderId;
-  console.log('updating order', orderId);
-
-  let update = { status: req.body.status }
-  Order.findByIdAndUpdate(orderId, update, { new: true }, function(err, order){
-    if (err) {
-      console.error(err);
-      res.json({
-        success:false,
-        message: "Error!" + err
-      });
-    } else if (!order) {
-      console.log('order', order);
-      res.json({
-        success:false,
-        message: "No order"
-      });
-    } else {
-      res.json({
-        success:true,
-        order: order
-      })
-    }
-  })
-})
-
-
-
 
 module.exports = router;

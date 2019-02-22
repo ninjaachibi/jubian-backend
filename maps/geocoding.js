@@ -3,7 +3,7 @@ import axios from 'axios';
 async function getCoords(rawAddress){
     let address = rawAddress.split(' ').join('+');
     console.log('address', address);
-    console.log('process.env', process.env);
+    // console.log('process.env', process.env);
     let geocode = await axios.get('http://www.mapquestapi.com/geocoding/v1/address', {
             params: {
             key: process.env.API_KEY,
