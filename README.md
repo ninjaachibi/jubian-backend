@@ -21,15 +21,8 @@ Returns a `json` object containing an array of all the users in the database. Th
 {
     "users": [
         {
-            "_id": "5bc3abbe32004c2af163cc13",
-            "username": "j",
-            "password": "mogan",
-            "email": "email",
-            "__v": 0
-        },
-        {
             "_id": "5c1c195d2204d1001ea3e1ca",
-            "username": "robert",
+            "username": "rob",
             "password": "password",
             "phone": "5555555555",
             "email": "robert.luo@goldenexpress.org",

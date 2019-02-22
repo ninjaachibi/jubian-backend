@@ -52,6 +52,7 @@ router.post('/login',(req,res) =>{
   console.log('booty', req.body)
   User.findOne({username:req.body.username}, function(err, user) {
     if (err) {
+      // there is an error
       console.error(err);
       res.json({
         success:false,
@@ -59,33 +60,35 @@ router.post('/login',(req,res) =>{
       });
     }
     else if (!user) {
+      // there is no user
       console.log("user",user);
       res.json({
         success:false,
         message: "Invalid user"
       });
+    } else {
+      // if there is a user, now checking for password
+      bcrypt.compare(req.body.password, user.password)
+      .then((hash)=>{
+        if (hash) {
+          // if authorization succeeds
+          res.json({
+            success: true,
+            userId: user._id,
+            token: jwt.sign(
+              { _id: user._id, username: user.username },
+              process.env.JWT_SECRET,
+              { expiresIn: '1d' })
+          })
+        } else {
+          // passwords don't match, authorization failed
+          res.json({
+            success: false,
+            message:"Incorrect password"
+          })
+        }
+      });
     }
-
-    bcrypt.compare(req.body.password, user.password)
-    .then((hash)=>{
-      if (hash) {
-        // if authorization succeeds
-        res.json({
-          success: true,
-          userId: user._id,
-          token: jwt.sign(
-            { _id: user._id, username: user.username },
-            process.env.JWT_SECRET,
-            { expiresIn: '1d' })
-        })
-      } else {
-        // passwords don't match, authorization failed
-        res.json({
-          success: false,
-          message:"Incorrect password"
-        })
-      }
-    })
   });
 });
 
