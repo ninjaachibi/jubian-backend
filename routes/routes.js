@@ -2,6 +2,9 @@ var axios = require('axios');
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 import { User, GroceryItem, Order, Driver } from '../models/models.js'
 import Stripe from 'stripe';
@@ -22,11 +25,31 @@ router.get('/users', (req,res) => {
     });
 })
 
+//helper route for checking address 
+import getDistance from '../maps/directions.js';
+
+router.post('/checkAddress', async (req, res) => {
+  let withinRadius = await getDistance(req.body.address);
+  if (withinRadius) {
+    res.json({
+      success: true,
+      message: 'success! address within 10 miles'
+    })
+    console.log('within 10 miles')
+  } else {
+    res.json({
+      success: false,
+      message: 'address not within 10 mile radius'
+    })
+    console.log('not within 10 miles')
+  }
+})
+
 //AUTH ROUTES
 router.post('/register', (req, res) => {
   console.log('body', req.body);
   User.findOne({username: req.body.username})
-  .then((user) => {
+  .then(async (user) => {
     console.log('user', user);
     if(user) {
       res.json({
@@ -35,63 +58,72 @@ router.post('/register', (req, res) => {
       })
     }
     else {
-      const newUser = new User({
-        username: req.body.username,
-        password: req.body.password,
-        phone: req.body.phone,
-        email: req.body.email,
-      });
-      newUser.save()
-      .then(user => {
-        res.json({
-          success: true,
-          message: `Successfully registered a new user: ${user.username}!`
+      bcrypt.hash(req.body.password, saltRounds)
+      .then((hash)=>{
+        const newUser = new User({
+          username: req.body.username,
+          password: hash,
+          phone: req.body.phone,
+          email: req.body.email,
         });
-      })
-      .catch(error => {
-        res.json({
-          success: false,
-          message: `Error: ${error}`
-        });
+        newUser.save()
+        .then(user => {
+          res.json({
+            success: true,
+            message: `Successfully registered a new user: ${user.username}!`
+          });
+        })
+        .catch(error => {
+          res.json({
+            success: false,
+            message: `Error: ${error}`
+          });
+        })
       })
     }
   })
 });
 
-router.post('/login',(req,res) =>{
+router.post('/login', (req, res) => {
   console.log('booty', req.body)
-  User.findOne({username:req.body.username}, function(err, user) {
+  User.findOne({ username: req.body.username }, function (err, user) {
     if (err) {
+      // there is an error
       console.error(err);
       res.json({
-        success:false,
+        success: false,
         message: "Error!" + err
       });
     }
     else if (!user) {
-      console.log("user",user);
-      res.json({
-        success:false,
-        message: "Invalid user"
-      });
-    }
-    //if passwords don't match, authorization failed
-    else if (user.password !== req.body.password) {
+      // there is no user
+      console.log("user", user);
       res.json({
         success: false,
-        message:"Incorrect password"
-      })
-    }
-    else{ console.log({user:req.body})
-    //if authorization succeeds
-    res.json({
-      success: true,
-      userId: user._id,
-      token: jwt.sign(
-        { _id: user._id, username: user.username },
-        process.env.JWT_SECRET,
-        { expiresIn: '1d' })
-      })
+        message: "Invalid user"
+      });
+    } else {
+      // if there is a user, now checking for password
+      bcrypt.compare(req.body.password, user.password)
+        .then((hash) => {
+          if (hash) {
+            // if authorization succeeds
+            res.json({
+              success: true,
+              userId: user._id,
+              token: jwt.sign(
+                { _id: user._id, username: user.username },
+                process.env.JWT_SECRET,
+                { expiresIn: '1d' })
+            })
+          } else {
+            // passwords don't match, authorization failed
+            res.json({
+              success: false,
+              message: "Incorrect password"
+            })
+          }
+        });
     }
   });
 });
@@ -205,100 +237,6 @@ router.post('/travelTime', async(req,res)=>{
     console.log(err)
   })
 })
-
-//Driver Register
-router.post('/driverRegister', (req, res) => {
-    console.log('body', req.body);
-    Driver.findOne({username: req.body.username})
-    .then((driver) => {
-      console.log('driver', driver);
-      if(driver) {
-        res.json({
-          success: false,
-          message: "Username already exists!"
-        })
-      }
-      else {
-        const newDriver = new Driver({
-          username: req.body.username,
-          password: req.body.password
-        });
-        newDriver.save()
-        .then(user => {
-          res.json({
-            success: true,
-            message: `Successfully registered a new driver: ${user.username}!`
-          });
-        })
-        .catch(error => {
-          res.json({
-            success: false,
-            message: `Error: ${error}`
-          });
-        })
-      }
-    })
-  });
-
-
-  //Driver Login
-  router.post('/driverLogin',(req,res) =>{
-    console.log('booty', req.body)
-    Driver.findOne({username:req.body.username}, function(err, user) {
-      if (err) {
-        console.error(err);
-        res.json({
-          success:false,
-          message: "Error!" + err
-        });
-      }
-      else if (!user) {
-        console.log("user",user);
-        res.json({
-          success:false,
-          message: "Invalid user"
-        });
-      }
-      //if passwords don't match, authorization failed
-      else if (user.password !== req.body.password) {
-        res.json({
-          success: false,
-          message:"Incorrect password"
-        })
-      }
-      else{ console.log({user:req.body})
-      //if authorization succeeds
-      res.json({
-        success: true,
-        driverId: user._id
-      })
-    }
-  });
-  });
-
-
-//RenderAvaliableOrder
-//router.post('/selectOrder',)
-
-//DriverOrders
-router.get('/driverOrders', function(req,res){
-  Order.find({},function(err,order){
-    if (err) {
-      console.error(err);
-      res.json({
-        success:false,
-        message: "Error!" + err
-      });
-    }
-    else{
-      res.json({
-        success:true,
-        order
-      })
-    }
-  })
-
-  })
 
 
 

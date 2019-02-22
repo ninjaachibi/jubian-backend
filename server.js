@@ -4,11 +4,9 @@ import bodyParser from 'body-parser';
 const app = express();
 import routes from './routes/routes.js'
 import authRoutes from './routes/authRoutes.js';
-const PORT = process.env.PORT || 3001;
-import path from 'path';
-import logger from 'morgan';
-import { User, GroceryItem, Order, Driver } from './models/models.js'
-
+import driverRoutes from './routes/driverRoutes.js';
+import driverAuthRoutes from './routes/driverAuthRoutes';
+const PORT = process.env.PORT || 3000;
 
 if (!process.env.MONGODB_URI) {
   console.log('MONGODB_URI config failed');
@@ -34,10 +32,12 @@ app.use(allowCrossDomain)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use('/driver', driverRoutes);
+app.use('/driver', driverAuthRoutes);
 app.use('/', routes);
 app.use('/', authRoutes);
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
