@@ -97,7 +97,11 @@ router.post('/login', (req, res) => {
     }
     else if (!user) {
       // there is no user
+<<<<<<< HEAD
       console.log("user", user);
+=======
+      console.log("user",user);
+>>>>>>> 1f9754a428d57cbedce69f483386a1574af4d1ab
       res.json({
         success: false,
         message: "Invalid user"
@@ -105,6 +109,7 @@ router.post('/login', (req, res) => {
     } else {
       // if there is a user, now checking for password
       bcrypt.compare(req.body.password, user.password)
+<<<<<<< HEAD
         .then((hash) => {
           if (hash) {
             // if authorization succeeds
@@ -124,6 +129,27 @@ router.post('/login', (req, res) => {
             })
           }
         });
+=======
+      .then((hash)=>{
+        if (hash) {
+          // if authorization succeeds
+          res.json({
+            success: true,
+            userId: user._id,
+            token: jwt.sign(
+              { _id: user._id, username: user.username },
+              process.env.JWT_SECRET,
+              { expiresIn: '1d' })
+          })
+        } else {
+          // passwords don't match, authorization failed
+          res.json({
+            success: false,
+            message:"Incorrect password"
+          })
+        }
+      });
+>>>>>>> 1f9754a428d57cbedce69f483386a1574af4d1ab
     }
   });
 });

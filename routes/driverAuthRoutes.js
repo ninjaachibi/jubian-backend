@@ -41,10 +41,10 @@ router.post('/order/update', (req, res) => {
   console.log('updating order', orderId);
 
   let update = { status: req.body.status }
-  if (req.body.status === "in delivery"){
-    update = { status: req.body.status, purchasedBy: req.user._id};
+  if (req.body.status === "purchased"){
+    update["purchasedBy"] = req.user._id;
   } else if (req.body.status === "delivered"){
-    update = { status: req.body.status, deliveredBy: req.user._id};
+    update["deliveredBy"] = req.user._id;
   }
 
   Order.findByIdAndUpdate(orderId, update, { new: true }, function(err, order){
