@@ -15,7 +15,7 @@ const userSchema = new Schema({
   },
   phone: {
     type: String,
-  }
+  },
 });
 
 const driverSchema = new Schema({
@@ -39,10 +39,8 @@ const orderSchema = new Schema({
     required: true
   },
   phone:{
-      type:String
-  },
-  userName:{
-    type:String
+      type:String,
+      required: true
   },
   address:{
     type:String,
@@ -51,11 +49,26 @@ const orderSchema = new Schema({
   ZIP:{
     type:String,
   },
-  time: {
+  orderTime: {
     type: Date,
     default: new Date()
   },
-  deliveredBy:{
+  deliveryLogistics:{
+    date: {
+      type: Date,
+      required: true,
+    },
+    time: {
+      type: String,
+      enum: ["17:00", "17:30", "18:00", "18:30", "19:00"],
+      required: true
+    }
+  },
+  deliveredBy: {
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'Driver'
+  },
+  purchasedBy: {
     type:mongoose.Schema.Types.ObjectId,
     ref: 'Driver'
   },
@@ -69,9 +82,16 @@ const orderSchema = new Schema({
         required: true,
       }
     }
-  ]
-
-
+  ],
+  status: {
+    type: String,
+    enum: ["ordered", "purchased", "in delivery", "delivered"],
+    required: true,
+    default: "ordered",
+  },
+  geocode: {
+    type: Object
+  }
 });
 
 
