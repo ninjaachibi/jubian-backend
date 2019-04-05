@@ -5,7 +5,10 @@ var router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-import { User, GroceryItem, Order, Driver } from '../models/models.js'
+import User from '../models/UserSchema';
+import GroceryItem from '../models/GrocerySchema';
+import Order from '../models/OrderSchema';
+
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
 
@@ -29,6 +32,7 @@ router.post('/register', (req, res) => {
           password: hash,
           phone: req.body.phone,
           email: req.body.email,
+          fullname: req.body.fullname,
         });
         newUser.save()
         .then(user => {
@@ -72,9 +76,14 @@ router.post('/login',(req,res) =>{
       .then((hash)=>{
         if (hash) {
           // if authorization succeeds
+          console.log('user', user);
           res.json({
             success: true,
             userId: user._id,
+            info: {
+              username: user.username,
+              fullname: user.fullname
+            },
             token: jwt.sign(
               { _id: user._id, username: user.username },
               process.env.JWT_SECRET,
