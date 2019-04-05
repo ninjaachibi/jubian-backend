@@ -6,7 +6,7 @@ Hello, you've come to the right place. This is the backend API for Golden Expres
 running somewhere out there. Our backend is also a MongoDB NoSQL backend. But you don't need to worry about that. You're here for 
 our API endpoints.
 
-All HTTP requests are made to: https://golden-express.herokuapp.com
+All HTTP requests are made to: https://fusion-tech.herokuapp.com/
 
 We can split endpoints into two general groups. Ones that:
   1. **Don't** require authentication  
