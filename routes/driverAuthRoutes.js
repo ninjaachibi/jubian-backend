@@ -42,7 +42,7 @@ router.post('/order/update', (req, res) => {
 
   let update = { status: req.body.status }
   if (req.body.status === "purchased"){
-    update["purchasedBy"] = eq.user._id;
+    update["purchasedBy"] = req.user._id;
   } else if (req.body.status === "delivered"){
     update["deliveredBy"] = req.user._id;
   }

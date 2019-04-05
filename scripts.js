@@ -73,6 +73,8 @@ else if(process.argv[2] === "loadDatabase") {
 
       readFiles(path, (inventory) => {
         console.log('inventory of', inventory.length);
+
+        // grabs all of the items in inventory and saves it to the database
         Promise.all(inventory.map((item) => {
           console.log('item is',item);
           return new GroceryItem({
@@ -83,6 +85,7 @@ else if(process.argv[2] === "loadDatabase") {
             aisle: item.aisle
           }).save()
         }))
+
         .then(items => {
           console.log('items',items);
         })

@@ -5,7 +5,6 @@ var jwt = require('jsonwebtoken');
 import Order from '../models/OrderSchema';
 
 import getCoords from '../maps/geocoding.js';
-import getDistance from '../maps/directions.js';
 
 router.use(function(req, res, next) {
   var token = req.headers.authorization;
@@ -52,50 +51,41 @@ router.get('/userOrder',(req,res)=>{ //need to make this account for multiple or
   })
 })
 
-
-
 //ORDER - save order in database
 router.post('/Order', async (req,res) => {
   console.log('body', req.body, '\n\n');
-  let withinRadius = await getDistance(req.body.address);
-  if (withinRadius){
-    let geocode = await getCoords(req.body.address);
+  let geocode = await getCoords(req.body.address);
   
-    let items = req.body.items.map(i => {
-      let obj = JSON.parse(i);
-      return obj;
-    });
+  // let items = req.body.items.map(i => {
+  //   let obj = JSON.parse(i);
+  //   return obj;
+  // });
 
-    const newOrder = new Order({
-      totalPrice:req.body.totalPrice,
-      userName:req.body.userName,
-      ZIP:req.body.ZIP,
-      orderedBy: req.user._id, //need to change this to client userId
-      address:req.body.address,
-      phone:req.body.phone,
-      geocode: geocode,
-      items: items,
-      deliveryLogistics: {
-        date: req.body.deliveryLogistics.date,
-        time: req.body.deliveryLogistics.time
-      }
-    })
+  const newOrder = new Order({
+    totalPrice:req.body.totalPrice,
+    userName:req.body.userName,
+    ZIP:req.body.ZIP,
+    orderedBy: req.user._id, //need to change this to client userId
+    address:req.body.address,
+    phone:req.body.phone,
+    geocode: geocode,
+    items: req.body.items,
+    deliveryLogistics: {
+      date: req.body.deliveryLogistics.date,
+      time: req.body.deliveryLogistics.time
+    }
+  })
 
-    newOrder.save()
-    .then((order) => {
-      console.log('successfully saved order', order);
-      res.json({success: true, order})
-    })
-    .catch(err => {
-      console.log('error',err);
-      res.json({success: false, message: 'error message:' + err.message})
-    })
-  } else {
-    res.json({
-      success: false,
-      message: 'address not within 10 mile radius'
-    })
-  }
+  newOrder.save()
+  .then((order) => {
+    console.log('successfully saved order', order);
+    res.json({success: true, order})
+  })
+  .catch(err => {
+    console.log('error',err);
+    res.json({success: false, message: 'error message:' + err.message})
+  })
+
 })
 
 
