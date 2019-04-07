@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
-import { User, Order } from '../models/models.js';
+
+import Order from '../models/OrderSchema';
+
 import getCoords from '../maps/geocoding.js';
 
 router.use(function(req, res, next) {

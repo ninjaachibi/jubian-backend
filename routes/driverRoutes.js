@@ -5,7 +5,8 @@ var router = express.Router();
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-import { Order, Driver } from '../models/models.js'
+import Order from '../models/OrderSchema';
+import Driver from '../models/DriverSchema';
 
 //Driver Register
 router.post('/register', (req, res) => {
