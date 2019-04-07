@@ -58,11 +58,6 @@ router.get('/userOrder',(req,res)=>{ //need to make this account for multiple or
 router.post('/Order', async (req,res) => {
   console.log('body', req.body, '\n\n');
   let geocode = await getCoords(req.body.address);
-  
-  // let items = req.body.items.map(i => {
-  //   let obj = JSON.parse(i);
-  //   return obj;
-  // });
 
   const newOrder = new Order({
     totalPrice:req.body.totalPrice,
