@@ -7,6 +7,7 @@ import authRoutes from './routes/authRoutes.js';
 import driverRoutes from './routes/driverRoutes.js';
 import driverAuthRoutes from './routes/driverAuthRoutes';
 import notificationRoutes from './routes/notificationRoutes';
+import notificationAuthRoutes from './routes/notificationAuthRoutes';
 
 const PORT = process.env.PORT || 3000;
 
@@ -37,6 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/driver', driverRoutes);
 app.use('/driver', driverAuthRoutes);
 app.use('/notification', notificationRoutes);
+app.use('/notification', notificationAuthRoutes);
 app.use('/', routes);
 app.use('/', authRoutes);
 
