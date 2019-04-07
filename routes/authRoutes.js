@@ -34,7 +34,10 @@ router.use(function(req, res, next) {
   next();
 });
 
-
+// USER INFO
+router.get('/userInfo', (req, res) => {
+  res.json(req.user);
+})
 
 //USERORDER
 router.get('/userOrder',(req,res)=>{ //need to make this account for multiple orders

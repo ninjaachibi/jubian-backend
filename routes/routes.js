@@ -8,10 +8,27 @@ const saltRounds = 10;
 import User from '../models/UserSchema';
 import GroceryItem from '../models/GrocerySchema';
 import Order from '../models/OrderSchema';
+import Notification from '../models/NotificationSchema';
 
 import _ from 'underscore'
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
+
+router.post('/newnotif', (req, res)=> {
+  const newNotif = new Notification({
+    content: 'test'
+  })
+
+  newNotif.save()
+  .then(notif =>  res.json('notif is sent' + notif._id))
+})
+
+router.post('/test', (req,res)=>{
+  res.json('testing is true')
+  console.log('testing route reached' + req.body.id)
+})
+
+
 
 //test getting users
 router.get('/users', (req,res) => {
@@ -221,15 +238,18 @@ router.post('/login', (req, res) => {
         if (hash) {
           // if authorization succeeds
           console.log('user', user);
+          let userObj = {
+            username: user.username,
+            fullname: user.fullname,
+            email: user.email,
+            _id: user._id
+          }
           res.json({
             success: true,
             userId: user._id,
-            info: {
-              username: user.username,
-              fullname: user.fullname
-            },
+            userObj: userObj,
             token: jwt.sign(
-              { _id: user._id, username: user.username },
+              userObj,
               process.env.JWT_SECRET,
               { expiresIn: '1d' })
           })

@@ -18,6 +18,9 @@ const userSchema = new Schema({
   },
   fullname: {
     type: String
+  },
+  profile_picture: {
+    type: String
   }
 });
 
