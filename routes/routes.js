@@ -8,6 +8,7 @@ const saltRounds = 10;
 import User from '../models/UserSchema';
 import GroceryItem from '../models/GrocerySchema';
 import Order from '../models/OrderSchema';
+import Notification from '../models/NotificationSchema';
 
 import _ from 'underscore'
 import Stripe from 'stripe';
@@ -27,114 +28,6 @@ router.get('/users', (req,res) => {
       console.log('ERROR',err);
     });
 })
-
-// *** push notifications *** //
-
-import Expo from 'expo-server-sdk';
-
-// Create a new Expo SDK client
-let expo = new Expo();
-var somePushTokens = []; 
-let messages = [];
-
-// this endpoint should only run once per user
-router.post('/users/register-push-token', async (req,res) => {
-  const { token, user } = req.body
-
-  //need to save these to database
-  const value = token.value
-  const username = user.username
-
-  //only push token on if it's not there before
-  if (!_.contains(somePushTokens, value)) {
-    somePushTokens.push(value)
-    console.log('new push token pushed', value)
-  }
-  else {
-    console.log('this token is already registered')
-  }
-
-  res.json({
-    success: true,
-    token,
-    user
-  })
-  console.log('registering for push notifs ', token, user)
-})
-
-let tickets = [];
-
-//need to account for chunks, but now let's just do one by one.
-router.get('/users/send-push', (req,res) => {  
-  for (let pushToken of somePushTokens) {
-    if (!Expo.isExpoPushToken(pushToken)) {
-      console.error(`Push token ${pushToken} is not a valid Expo push token`);
-      continue;
-    }
-
-    messages.push({
-      to: pushToken,
-      sound: 'default',
-      body: 'This is a test notification',
-      data: { withSome: 'data' },
-    })
-  }
-
-  let chunks = expo.chunkPushNotifications(messages);
-  (async () => {
-    for (let chunk of chunks) {
-      try {
-        let ticketChunk = await expo.sendPushNotificationsAsync(chunk);
-        console.log('ticketChunk',ticketChunk);
-        tickets.push(...ticketChunk); //for receipts
-
-        //if done, clear the messages we have to send
-        messages = []
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  })();
-});
-
-let receiptIds = [];
-
-router.get('/users/get-receipts', (req,res) => {
-  for (let ticket of tickets) {
-    if (ticket.id) {
-      receiptIds.push(ticket.id);
-    }
-  }
-
-  console.log('receiptIds', receiptIds)
-
-  let receiptIdChunks = expo.chunkPushNotificationReceiptIds(receiptIds);
-  (async () => {
-    for (let chunk of receiptIdChunks) {
-      console.log('chunk',chunk)
-      try {
-        let receipts = await expo.getPushNotificationReceiptsAsync(chunk);
-        console.log('receipts',receipts);
-
-        for (let r of Object.keys(receipts)) {
-          let receipt = receipts[r];
-          console.log('receipt', receipt)
-          if (receipt.status === 'ok') {
-            continue;
-          } else if (receipt.status === 'error') {
-            console.error(`There was an error sending a notification: ${receipt.message}`);
-            if (receipt.details && receipt.details.error) {
-              console.error(`The error code is ${receipt.details.error}`);
-            }
-          }
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  })();
-});
-
 
 //helper route for checking address 
 import getDistance from '../maps/directions.js';
@@ -221,15 +114,19 @@ router.post('/login', (req, res) => {
         if (hash) {
           // if authorization succeeds
           console.log('user', user);
+          let userObj = {
+            username: user.username,
+            fullname: user.fullname,
+            email: user.email,
+            phone: user.phone,
+            _id: user._id
+          }
           res.json({
             success: true,
             userId: user._id,
-            info: {
-              username: user.username,
-              fullname: user.fullname
-            },
+            userObj: userObj,
             token: jwt.sign(
-              { _id: user._id, username: user.username },
+              userObj,
               process.env.JWT_SECRET,
               { expiresIn: '1d' })
           })

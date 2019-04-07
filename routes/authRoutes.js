@@ -34,16 +34,19 @@ router.use(function(req, res, next) {
   next();
 });
 
-
+// USER INFO
+router.get('/userInfo', (req, res) => {
+  res.json(req.user);
+})
 
 //USERORDER
 router.get('/userOrder',(req,res)=>{ //need to make this account for multiple orders
   let userid = req.user._id;
   console.log('userid',userid);
   Order.find({orderedBy:userid})
-  .then(order =>{
-    console.log(order)
-    res.json({order:order,username:req.user.username})
+  .then(orders =>{
+    console.log(orders)
+    res.json({orders:orders,username:req.user.username})
   })
   .catch(err =>{
     console.log(err)
@@ -55,11 +58,6 @@ router.get('/userOrder',(req,res)=>{ //need to make this account for multiple or
 router.post('/Order', async (req,res) => {
   console.log('body', req.body, '\n\n');
   let geocode = await getCoords(req.body.address);
-  
-  // let items = req.body.items.map(i => {
-  //   let obj = JSON.parse(i);
-  //   return obj;
-  // });
 
   const newOrder = new Order({
     totalPrice:req.body.totalPrice,

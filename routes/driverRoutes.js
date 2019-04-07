@@ -67,6 +67,10 @@ router.post('/login',(req,res) =>{
     .then((hash)=>{
       if (hash) {
         // if authorization succeeds
+        let userObj = {
+          username: user.username,
+          _id: user._id
+        }
         res.json({
           success: true,
           driverInfo: {
@@ -74,7 +78,7 @@ router.post('/login',(req,res) =>{
             username: user.username
           },
           token: jwt.sign(
-            { _id: user._id, username: user.username },
+            userObj,
             process.env.JWT_SECRET,
             { expiresIn: '1d' })
         })
