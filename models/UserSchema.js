@@ -12,12 +12,20 @@ const userSchema = new Schema({
   },
   email:{
     type: String,
+    required: true
   },
   phone: {
     type: String,
+    required: true
   },
   fullname: {
     type: String
+  },
+  picture: {
+    type: {
+      date: String,
+      uri: String
+    }
   }
 });
 
