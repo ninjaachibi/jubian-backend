@@ -41,11 +41,8 @@ router.post('/order/update', (req, res) => {
   console.log('updating order', orderId);
 
   let update = { status: req.body.status }
-  if (req.body.status === "purchased"){
-    update["purchasedBy"] = req.user._id;
-  } else if (req.body.status === "delivered"){
-    update["deliveredBy"] = req.user._id;
-  }
+  update[req.body.status]["driver"] = req.user._id;
+  update[req.body.status]["date"] = new Date();
 
   Order.findByIdAndUpdate(orderId, update, { new: true }, function(err, order){
     if (err) {
