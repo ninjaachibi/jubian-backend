@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 import Notification from '../models/NotificationSchema';
+import _ from 'underscore'
 
 // *** push notifications *** //
 
@@ -28,13 +29,12 @@ router.post('/register-push-token', async (req,res) => {
   else {
     console.log('this token is already registered')
   }
-
+  console.log('registering for push notifs ', token, user)
   res.json({
     success: true,
     token,
     user
   })
-  console.log('registering for push notifs ', token, user)
 })
 
 let tickets = [];
