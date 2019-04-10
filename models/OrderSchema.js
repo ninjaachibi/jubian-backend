@@ -63,6 +63,9 @@ const orderSchema = new Schema({
   },
   geocode: {
     type: Object
+  },
+  ExpoToken: {
+    type: String
   }
 });
 
