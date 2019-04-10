@@ -71,7 +71,8 @@ router.post('/Order', async (req,res) => {
     deliveryLogistics: {
       date: req.body.deliveryLogistics.date,
       time: req.body.deliveryLogistics.time
-    }
+    },
+    ExpoToken: req.body.ExpoToken
   })
 
   newOrder.save()
