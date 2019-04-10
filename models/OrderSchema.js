@@ -36,13 +36,27 @@ const orderSchema = new Schema({
       required: true
     }
   },
-  deliveredBy: {
-    type:mongoose.Schema.Types.ObjectId,
-    ref: 'Driver'
+  delivered: {
+    type: {
+      date: {
+        type: Date,
+      },
+      driver: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Driver'
+      }
+    }
   },
-  purchasedBy: {
-    type:mongoose.Schema.Types.ObjectId,
-    ref: 'Driver'
+  purchased: {
+    type: {
+      date: {
+        type: Date,
+      },
+    },
+    driver: {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: 'Driver'
+    }
   },
   items:[
     {

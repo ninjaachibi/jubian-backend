@@ -3,6 +3,7 @@ var router = express.Router();
 var jwt = require('jsonwebtoken');
 
 import Order from '../models/OrderSchema';
+import User from '../models/UserSchema';
 
 import getCoords from '../maps/geocoding.js';
 
@@ -19,7 +20,7 @@ router.use(function(req, res, next) {
   token = tokenArr[1];
 
   try {
-    console.log(token);
+    // console.log(token);
     var userInfo = jwt.verify(token, process.env.JWT_SECRET);
   } catch(err) {
     res.status(401).json({ success: false, message: 'Invalid token' });
@@ -37,6 +38,38 @@ router.use(function(req, res, next) {
 // USER INFO
 router.get('/userInfo', (req, res) => {
   res.json(req.user);
+})
+
+// UPDATE USER INFO
+router.post('/user/update', (req, res) => {
+  const updateObj = {
+    username: req.body.username,
+    phone: req.body.phone,
+    fullname: req.body.fullname,
+    picture: req.body.picture
+  }
+
+  User.findByIdAndUpdate(req.user._id, updateObj, { new: true }, 
+    (err, user) => {
+      if (err){
+        console.error(err);
+        res.json({
+          success: false,
+          message: "Error!" + err
+        })
+      } else if (!user){
+        res.json({
+          success: false,
+          message: "No user"
+        });
+      } else {
+        res.json({
+          success: true,
+          user: user
+        })
+      }
+    }
+  )
 })
 
 //USERORDER
