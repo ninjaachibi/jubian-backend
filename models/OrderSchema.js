@@ -58,6 +58,17 @@ const orderSchema = new Schema({
       ref: 'Driver'
     }
   },
+  in_delivery: {
+    type: {
+      date: {
+        type: Date,
+      },
+    },
+    driver: {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: 'Driver'
+    }
+  },
   items:[
     {
       name: String,
@@ -71,7 +82,7 @@ const orderSchema = new Schema({
   ],
   status: {
     type: String,
-    enum: ["ordered", "purchased", "in delivery", "delivered"],
+    enum: ["ordered", "purchased", "in_delivery", "delivered"],
     required: true,
     default: "ordered",
   },

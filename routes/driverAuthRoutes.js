@@ -26,9 +26,7 @@ router.use(function(req, res, next) {
     res.status(401).json({ success: false, message: 'Invalid token' });
     return;
   }
-  /*
-  { _id: "fsvnssd", username: "hello" }
-  */
+  
   if (userInfo._id === undefined) return res.status(401).json({ success: false, message: 'Could not sign with JWT SECRET' });
 
   req.user = userInfo;
@@ -65,8 +63,5 @@ router.post('/order/update', (req, res) => {
     }
   })
 })
-
-
-
 
 module.exports = router;
