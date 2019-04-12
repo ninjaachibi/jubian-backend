@@ -7,31 +7,31 @@ const saltRounds = 10;
 
 import Order from '../models/OrderSchema';
 
-router.use(function(req, res, next) {
-  var token = req.headers.authorization;
+// router.use(function (req, res, next) {
+//   var token = req.headers.authorization;
 
-  if (token === undefined) return res.status(401).json({ success: false, message: 'no jwt token' });
+//   if (token === undefined) return res.status(401).json({ success: false, message: 'no jwt token' });
 
-  var tokenArr = token.split(' ');
-  if (tokenArr[0] !== 'Bearer' || tokenArr[1] === undefined) {
-    return res.status(401).json({ success: false, message: 'Missing bearer or token fields' });
-  }
+//   var tokenArr = token.split(' ');
+//   if (tokenArr[0] !== 'Bearer' || tokenArr[1] === undefined) {
+//     return res.status(401).json({ success: false, message: 'Missing bearer or token fields' });
+//   }
 
-  token = tokenArr[1];
+//   token = tokenArr[1];
 
-  try {
-    console.log(token);
-    var userInfo = jwt.verify(token, process.env.JWT_SECRET);
-  } catch(err) {
-    res.status(401).json({ success: false, message: 'Invalid token' });
-    return;
-  }
-  
-  if (userInfo._id === undefined) return res.status(401).json({ success: false, message: 'Could not sign with JWT SECRET' });
+//   try {
+//     console.log(token);
+//     var userInfo = jwt.verify(token, process.env.JWT_SECRET);
+//   } catch (err) {
+//     res.status(401).json({ success: false, message: 'Invalid token' });
+//     return;
+//   }
 
-  req.user = userInfo;
-  next();
-});
+//   if (userInfo._id === undefined) return res.status(401).json({ success: false, message: 'Could not sign with JWT SECRET' });
+
+//   req.user = userInfo;
+//   next();
+// });
 
 // Update selected order
 router.post('/order/update', (req, res) => {
@@ -42,22 +42,25 @@ router.post('/order/update', (req, res) => {
   update[req.body.status]["driver"] = req.user._id;
   update[req.body.status]["date"] = new Date();
 
-  Order.findByIdAndUpdate(orderId, update, { new: true }, function(err, order){
+  Order.findByIdAndUpdate(orderId, update, { new: true }, function (err, order) {
     if (err) {
       console.error(err);
       res.json({
-        success:false,
+        success: false,
         message: "Error!" + err
       });
     } else if (!order) {
       console.log('order', order);
       res.json({
-        success:false,
+        success: false,
         message: "No order"
       });
     } else {
+      //send push notif w/ update
+      console.log(order.status, "updated status is")
+
       res.json({
-        success:true,
+        success: true,
         order: order
       })
     }
