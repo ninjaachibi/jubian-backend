@@ -52,22 +52,22 @@ const orderSchema = new Schema({
       date: {
         type: Date,
       },
+      driver: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Driver'
+      }
     },
-    driver: {
-      type:mongoose.Schema.Types.ObjectId,
-      ref: 'Driver'
-    }
   },
   in_delivery: {
     type: {
       date: {
         type: Date,
       },
+      driver: {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Driver'
+      }
     },
-    driver: {
-      type:mongoose.Schema.Types.ObjectId,
-      ref: 'Driver'
-    }
   },
   items:[
     {
