@@ -93,7 +93,12 @@ router.post('/Order', async (req,res) => {
   let geocode = await getCoords(req.body.address);
 
   const newOrder = new Order({
-    totalPrice:req.body.totalPrice,
+    price: {
+      base: req.body.price.base,
+      tax: req.body.price.tax,
+      delivery: req.body.price.delivery,
+      total: req.body.price.total
+    },
     userName:req.body.userName,
     ZIP:req.body.ZIP,
     orderedBy: req.user._id, //need to change this to client userId

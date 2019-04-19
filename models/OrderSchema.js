@@ -2,8 +2,25 @@ const mongoose = require('mongoose');
 const { Schema } = require('mongoose')
 
 const orderSchema = new Schema({
-  totalPrice:{
-    type: Number,
+  price:{
+    type: {
+      base: {
+        type: Number,
+        required: true
+      },
+      tax: {
+        type: Number,
+        required: true
+      },
+      delivery: {
+        type: Number,
+        required: true
+      },
+      total: {
+        type: Number,
+        required: true
+      }
+    }
   },
   orderedBy:{
     type:mongoose.Schema.Types.ObjectId,
