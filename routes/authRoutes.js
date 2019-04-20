@@ -72,14 +72,27 @@ router.post('/user/update', (req, res) => {
   )
 })
 
-//USERORDER
-router.get('/userOrder',(req,res)=>{ //need to make this account for multiple orders
+//USERORDER - finds all
+router.get('/userOrder',(req,res)=>{ 
   let userid = req.user._id;
   console.log('userid',userid);
   Order.find({orderedBy:userid})
   .then(orders =>{
     console.log(orders)
     res.json({orders:orders,username:req.user.username})
+  })
+  .catch(err =>{
+    console.log(err)
+    res.json({err})
+  })
+})
+
+// get ONE user order
+router.post('/userOrder/one',(req,res)=>{ 
+  Order.findById(req.body.orderId)
+  .then(order =>{
+    console.log(order)
+    res.json({order:order,username:req.user.username})
   })
   .catch(err =>{
     console.log(err)
