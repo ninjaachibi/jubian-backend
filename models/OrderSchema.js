@@ -71,9 +71,11 @@ const orderSchema = new Schema({
       },
       driver: {
         type:mongoose.Schema.Types.ObjectId,
-        ref: 'Driver'
+        ref: 'Driver',
       }
     },
+    // default: {},
+    // required: true
   },
   in_delivery: {
     type: {
