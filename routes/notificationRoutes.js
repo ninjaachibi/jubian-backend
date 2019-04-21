@@ -119,8 +119,9 @@ router.post('/order/update', (req, res) => {
 
   let update = { status: req.body.status }
   console.log('update', update)
-  // update[req.body.status]["driver"] = 'drivername: bobby' //req.user._id;
-  // update[req.body.status]["date"] = new Date();
+  update[req.body.status] = {};
+  update[req.body.status]["driver"] = 'drivername: bobby' //req.user._id;
+  update[req.body.status]["date"] = new Date();
 
   Order.findByIdAndUpdate(orderId, update, { new: true }, function (err, order) {
     if (err) {
