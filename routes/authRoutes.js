@@ -43,11 +43,13 @@ router.get('/userInfo', (req, res) => {
 // UPDATE USER INFO
 router.post('/user/update', (req, res) => {
   const updateObj = {
-    username: req.body.username,
+    // username: req.body.username,
     phone: req.body.phone,
     fullname: req.body.fullname,
-    picture: req.body.picture
+    // picture: req.body.picture
   }
+
+  console.log('updating');
 
   User.findByIdAndUpdate(req.user._id, updateObj, { new: true }, 
     (err, user) => {
