@@ -8,6 +8,10 @@ const orderSchema = new Schema({
         type: Number,
         required: true
       },
+      small_order: {
+        type: Number,
+        required: true
+      },
       tax: {
         type: Number,
         required: true

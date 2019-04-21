@@ -108,6 +108,7 @@ router.post('/Order', async (req,res) => {
   const newOrder = new Order({
     price: {
       base: req.body.price.base,
+      small_order: req.body.price.small_order,
       tax: req.body.price.tax,
       delivery: req.body.price.delivery,
       total: req.body.price.total
