@@ -1,6 +1,7 @@
 import fs from 'fs';
 import mongoose from 'mongoose';
-import { User, GroceryItem } from './models/models'
+import { GroceryItem } from '../models/GrocerySchema'
+import { User } from '../models/UserSchema'
 
 console.log(process.argv.length);
 
