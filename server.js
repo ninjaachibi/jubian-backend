@@ -35,6 +35,10 @@ app.use(allowCrossDomain)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/tos.pdf', function(req,res){
+  res.sendFile(__dirname + '/public/tos.pdf');
+ }); 
+
 app.use('/driver', driverRoutes);
 app.use('/driver', driverAuthRoutes);
 app.use('/notification', notificationRoutes);
