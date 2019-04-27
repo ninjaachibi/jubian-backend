@@ -2,6 +2,7 @@ var axios = require('axios');
 import express from 'express';
 import bodyParser from 'body-parser';
 const app = express();
+
 import routes from './routes/routes.js'
 import authRoutes from './routes/authRoutes.js';
 import driverRoutes from './routes/driverRoutes.js';
@@ -34,6 +35,10 @@ const allowCrossDomain = function(req, res,next) {
 app.use(allowCrossDomain)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get('/tos.pdf', function(req,res){
+  res.sendFile(__dirname + '/public/tos.pdf');
+ }); 
 
 app.use('/driver', driverRoutes);
 app.use('/driver', driverAuthRoutes);

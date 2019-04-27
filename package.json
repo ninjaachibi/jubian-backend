@@ -9,7 +9,7 @@
     "babel-node": "./node_modules/.bin/babel-node --presets es2015,stage-0",
     "start:dev": "nodemon --exec npm run babel-node -- ./server.js",
     "start": "./node_modules/.bin/babel-node --presets es2015,stage-0 ./server.js",
-    "script": "npm run babel-node scripts.js"
+    "script": "npm run babel-node ./scripts/scripts.js"
   },
   "engines": {
     "node": "8.11.2"
@@ -27,8 +27,12 @@
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "connect-mongo": "^2.0.1",
+    "convert-excel-to-json": "^1.6.1",
     "expo-server-sdk": "^3.2.0",
     "express": "^4.16.3",
+    "imagemin": "^6.1.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
     "jsonwebtoken": "^8.3.0",
     "moment": "^2.22.2",
     "mongodb-topology-manager": "^2.1.0",
@@ -36,6 +40,7 @@
     "morgan": "^1.9.0",
     "nodemon": "^1.18.1",
     "path": "^0.12.7",
+    "sharp": "^0.22.0",
     "stripe": "^6.7.0",
     "underscore": "^1.9.1"
   },

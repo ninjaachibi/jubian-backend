@@ -8,11 +8,27 @@ const saltRounds = 10;
 import User from '../models/UserSchema';
 import GroceryItem from '../models/GrocerySchema';
 import Order from '../models/OrderSchema';
-import Notification from '../models/NotificationSchema';
+import InventoryItem from '../models/InventorySchema';
 
 import _ from 'underscore'
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
+
+router.get('/inventory', (req, res) => {
+  console.log('brand', req.query.brand);
+  InventoryItem.findOne({brandName: {english: req.query.brand}})
+  .then(item => {
+    // console.log('item', item);
+    if (item.photos[0]){
+      console.log(item.photos[0].uri.slice(0,10))
+      res.contentType('image/jpeg');
+      res.send(item.photos[0].uri);
+    } else {
+      res.contentType('json');
+      res.json('no image');
+    }
+  })
+})
 
 //test getting users
 router.get('/users', (req,res) => {
@@ -144,11 +160,21 @@ router.post('/login', (req, res) => {
 
 //SEARCH -- browse specific aisles
 router.get('/browse', (req,res) => {
-  let aisle = req.query.aisle;
-  console.log('aisle', aisle);
-  GroceryItem.find({aisle})
+  // let aisle = req.query.aisle;
+  // console.log('aisle', aisle);
+  // GroceryItem.find({aisle})
+  // .then(items => {
+  //   res.json({items})
+  // })
+  // .catch(err => {
+  //   console.log(err);
+  //   res.json({error: err})
+  // })
+  let category = req.query.category;
+  InventoryItem.find({ categories: {$elemMatch: {$in: [ category ]}}})
   .then(items => {
-    res.json({items})
+    console.log('items', items[0])
+    res.json({ items })
   })
   .catch(err => {
     console.log(err);
