@@ -94,11 +94,12 @@ const orderSchema = new Schema({
   },
   items:[
     {
-      name: String,
+      product: String,
+      brand: String,
       count: Number,
       itemId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'GroceryItem',
+        ref: 'InventoryItem',
         required: true,
       }
     }
