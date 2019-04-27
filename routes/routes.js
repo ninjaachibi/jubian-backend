@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 import User from '../models/UserSchema';
-import GroceryItem from '../models/GrocerySchema';
 import Order from '../models/OrderSchema';
 import InventoryItem from '../models/InventorySchema';
 
@@ -187,7 +186,33 @@ router.get('/browse', (req,res) => {
 router.get('/searchItem',(req,res) =>{
   let searchItem = req.query.searchItem;
   console.log('query', searchItem);
-  GroceryItem.find({name: {$regex : searchItem, $options: 'i'}})
+  let queryObj = {
+    $or: [{
+      "productName.english": {
+          '$regex': searchItem,
+          '$options': 'i'
+      }
+      }, {
+      "productName.chinese": {
+          '$regex': searchItem,
+          '$options': 'i'
+      }
+      }, {
+      "brandName.chinese": {
+          '$regex': searchItem,
+          '$options': 'i'
+      }
+      }, {
+      "brandName.english": {
+          '$regex': searchItem,
+          '$options': 'i'
+      }
+      },
+    ]
+  }
+
+  InventoryItem.find(queryObj)
+  // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
   .then(items => {
     // console.log(items);
     res.json({items})
