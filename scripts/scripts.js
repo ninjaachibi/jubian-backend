@@ -23,7 +23,6 @@ if (process.argv[2] === 'resize') {
     //listing all files using forEach
     files.forEach(function (file) {
         const minPath = path.join(folder, '../minimized');
-        // Do whatever you want to do with the file
         sharp(folder+file) 
         .resize(600, 600) 
         .toFile(minPath+'/'+file, (err) => {
