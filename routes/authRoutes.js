@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 import Order from '../models/OrderSchema';
 import User from '../models/UserSchema';
@@ -72,6 +74,49 @@ router.post('/user/update', (req, res) => {
       }
     }
   )
+})
+
+router.post('/updatePassword', async (req, res) => {
+  let user = await User.findById(req.user._id);
+  if (user){
+    const hash = await bcrypt.compare(req.body.old, user.password);
+    if (hash) {
+      const newHash = await bcrypt.hash(req.body.new, saltRounds);
+      let update = {
+        password: newHash
+      }
+      User.findByIdAndUpdate(req.user._id, update, { new: true }, 
+      (err, user) => {
+        if (err){
+          console.error(err);
+          res.json({
+            success: false,
+            message: err
+          })
+        } else if (!user){
+          res.json({
+            success: false,
+            message: "No such user."
+          });
+        } else {
+          res.json({
+            success: true,
+            user: user
+          })
+        }
+      })
+    } else {
+      res.json({
+        success: false,
+        message: 'Incorrect password.'
+      })
+    }
+  } else {
+    res.json({
+      success: false,
+      message: "There was an error."
+    })
+  }
 })
 
 //USERORDER - finds all
