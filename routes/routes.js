@@ -44,6 +44,20 @@ router.get('/users', (req,res) => {
     });
 })
 
+router.get('/product', (req, res) => {
+  var id = req.query.id;
+  console.log('gettig product', id);
+  InventoryItem.findById(id)
+  .then(item => {
+    console.log('item', item);
+    res.json( { item });
+  })
+  .catch(err => {
+    console.log(err);
+    res.json({ error: err })
+  })
+})
+
 //helper route for checking address 
 import getDistance from '../maps/directions.js';
 
