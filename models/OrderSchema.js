@@ -36,8 +36,20 @@ const orderSchema = new Schema({
       required: true
   },
   address:{
-    type:String,
-    required: true
+    type: {
+      address: {
+        type:String,
+        required: true
+      },
+      city: {
+        type:String,
+        required: true
+      },
+      ZIP: {
+        type:String,
+        required: true
+      },
+    }
   },
   ZIP:{
     type:String,

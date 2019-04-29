@@ -163,7 +163,11 @@ router.post('/Order', async (req,res) => {
     userName:req.body.userName,
     ZIP:req.body.ZIP,
     orderedBy: req.user._id, //need to change this to client userId
-    address:req.body.address,
+    address: {
+      address: req.body.address.address,
+      city: req.body.address.city,
+      ZIP: req.body.address.ZIP,
+    },
     phone:req.body.phone,
     geocode: geocode,
     items: req.body.items,
@@ -176,7 +180,7 @@ router.post('/Order', async (req,res) => {
 
   newOrder.save()
   .then((order) => {
-    console.log('successfully saved order', order);
+    // console.log('successfully saved order', order);
     res.json({success: true, order})
   })
   .catch(err => {
