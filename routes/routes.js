@@ -276,6 +276,22 @@ router.get('/searchItem',(req,res) =>{
   })
 })
 
+router.get('/popular',(req,res) =>{
+
+  InventoryItem.find({categories: {$elemMatch: {$in: [ 'Snacks' ]}}})
+  .limit(4)
+  // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
+  .then(items => {
+    // console.log(items);
+    res.json({items})
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({error: err})
+  })
+})
+
+
 //For stripe payments
 router.post('/payments', function(req, res){
   console.log('payment request..', req.body)
