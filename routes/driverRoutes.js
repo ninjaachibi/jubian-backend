@@ -96,7 +96,9 @@ router.post('/login',(req,res) =>{
 //Driver Orders
 router.get('/orders',(req,res) =>{
   console.log('orders', req.body)
-  Order.find({ status:{$in: ['ordered', 'purchased', 'in delivery']} })
+  Order.find({ 
+    status:{$in: ['ordered', 'purchased', 'in delivery']},
+  })
        .populate('orderedBy')
        .exec(function(err, orders){
           if (err) {
