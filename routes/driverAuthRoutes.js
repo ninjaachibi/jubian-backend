@@ -58,7 +58,9 @@ router.post('/order/update', (req, res) => {
       });
     } else {
       //send push notif w/ update
-      console.log(order.status, "updated status is")
+      console.log("updated status is", order.status)
+      console.log("order is ", order)
+      
 
       res.json({
         success: true,
