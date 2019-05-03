@@ -13,6 +13,41 @@ import _ from 'underscore'
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
 
+// router.post('/tempUpdate', async (req, res) => {
+//   let user = await User.findById(req.body.userId);
+//   if (user){
+//     const newHash = await bcrypt.hash(req.body.new, saltRounds);
+//     let update = {
+//       password: newHash
+//     }
+//     User.findByIdAndUpdate(req.body.userId, update, { new: true }, 
+//     (err, user) => {
+//       if (err){
+//         console.error(err);
+//         res.json({
+//           success: false,
+//           message: err
+//         })
+//       } else if (!user){
+//         res.json({
+//           success: false,
+//           message: "No such user."
+//         });
+//       } else {
+//         res.json({
+//           success: true,
+//           user: user
+//         })
+//       }
+//     })
+//   } else {
+//     res.json({
+//       success: false,
+//       message: "There was an error."
+//     })
+//   }
+// })
+
 router.get('/inventory', (req, res) => {
   console.log('brand', req.query.brand);
   InventoryItem.findOne({brandName: {english: req.query.brand}})
@@ -118,7 +153,7 @@ router.post('/register', (req, res) => {
   })
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   console.log('booty', req.body)
   User.findOne({ username: req.body.username }, function (err, user) {
     if (err) {
@@ -184,9 +219,13 @@ router.get('/browse', (req,res) => {
   //   res.json({error: err})
   // })
   let category = req.query.category;
-  InventoryItem.find({ categories: {$elemMatch: {$in: [ category ]}}})
+  let skipNumber = parseInt(req.query.skip);
+  InventoryItem
+  .find({ categories: {$elemMatch: {$in: [ category ]}}})
+  .skip(skipNumber)
+  .limit(10)
   .then(items => {
-    console.log('items', items[0])
+    // console.log('items', items[0])
     res.json({ items })
   })
   .catch(err => {
@@ -236,6 +275,22 @@ router.get('/searchItem',(req,res) =>{
     res.json({error: err})
   })
 })
+
+router.get('/popular',(req,res) =>{
+
+  InventoryItem.find({categories: {$elemMatch: {$in: [ 'Snacks' ]}}})
+  .limit(4)
+  // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
+  .then(items => {
+    // console.log(items);
+    res.json({items})
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({error: err})
+  })
+})
+
 
 //For stripe payments
 router.post('/payments', function(req, res){
