@@ -277,9 +277,8 @@ router.get('/searchItem',(req,res) =>{
 })
 
 router.get('/popular',(req,res) =>{
-
   InventoryItem.find({categories: {$elemMatch: {$in: [ 'Snacks' ]}}})
-  .limit(4)
+  .limit(10)
   // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
   .then(items => {
     // console.log(items);
