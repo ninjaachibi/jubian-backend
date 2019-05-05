@@ -146,8 +146,8 @@ router.post('/order/update', (req, res) => {
       let message = {
         to: ExpoToken,
         sound: 'default',
-        body: `You order is ${order.status}`,
-        data: { title: 'Update', caption: `You order is ${order.status}` },
+        body: `Your order is ${order.status}`,
+        data: { title: 'Update', caption: `Your order is ${order.status}` },
       }
 
       let chunks = expo.chunkPushNotifications([message]);
