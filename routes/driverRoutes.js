@@ -63,33 +63,35 @@ router.post('/login',(req,res) =>{
         message: "Invalid user"
       });
     }
-    bcrypt.compare(req.body.password, user.password)
-    .then((hash)=>{
-      if (hash) {
-        // if authorization succeeds
-        let userObj = {
-          username: user.username,
-          _id: user._id
-        }
-        res.json({
-          success: true,
-          driverInfo: {
-            _id: user._id,
-            username: user.username
-          },
-          token: jwt.sign(
-            userObj,
-            process.env.JWT_SECRET,
-            { expiresIn: '1d' })
+    try {
+      bcrypt.compare(req.body.password, user.password)
+        .then((hash) => {
+          if (hash) {
+            // if authorization succeeds
+            let userObj = {
+              username: user.username,
+              _id: user._id
+            }
+            res.json({
+              success: true,
+              driverInfo: {
+                _id: user._id,
+                username: user.username
+              },
+              token: jwt.sign(
+                userObj,
+                process.env.JWT_SECRET,
+                { expiresIn: '1d' })
+            })
+          } else {
+            // passwords don't match, authorization failed
+            res.json({
+              success: false,
+              message: "Incorrect password"
+            })
+          }
         })
-      } else {
-        // passwords don't match, authorization failed
-        res.json({
-          success: false,
-          message:"Incorrect password"
-        })
-      }
-    })
+    } catch (error) { console.error(err) }
 });
 });
 
