@@ -97,7 +97,7 @@ router.post('/login',(req,res) =>{
 router.get('/orders',(req,res) =>{
   console.log('orders', req.body)
   Order.find({ 
-    status:{$in: ['ordered', 'purchased', 'in delivery']},
+    status:{$in: ['ordered', 'purchased', 'in_delivery']},
   })
        .populate('orderedBy')
        .exec(function(err, orders){
