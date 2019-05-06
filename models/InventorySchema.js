@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const { Schema } = require('mongoose')
 
 const inventorySchema = new Schema({
+  item_id: {
+      type: String,
+      required: true,
+  },
   brandName: {
     type: {
         english: String,
@@ -19,11 +23,16 @@ const inventorySchema = new Schema({
   },
   categories: {
       type: [ String ],
-      required: true
+      required: true,
+  },
+  subcategories: {
+      type: [ String ],
+  },
+  tags: {
+      type: [ String ],
   },
   description: {
       type: String,
-      required: true
   },
   price: {
       type: Number,
@@ -42,4 +51,4 @@ const inventorySchema = new Schema({
   }
 });
 
-export default mongoose.model('InventoryItem', inventorySchema);
+export default mongoose.model('InventoryItems2', inventorySchema);
