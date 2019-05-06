@@ -219,6 +219,7 @@ router.get('/browse', (req,res) => {
   //   res.json({error: err})
   // })
   let category = req.query.category;
+  console.log('category', category);
   let skipNumber = parseInt(req.query.skip);
   InventoryItem
   .find({ categories: {$elemMatch: {$in: [ category ]}}})
@@ -238,33 +239,48 @@ router.get('/browse', (req,res) => {
 //Search --browse certain item
 router.get('/searchItem',(req,res) =>{
   let searchItem = req.query.searchItem;
+  let skipNumber = parseInt(req.query.skip);
   console.log('query', searchItem);
   let queryObj = {
     $or: [{
       "productName.english": {
-          '$regex': searchItem,
-          '$options': 'i'
+        '$regex': searchItem,
+        '$options': 'i'
       }
       }, {
       "productName.chinese": {
-          '$regex': searchItem,
-          '$options': 'i'
+        '$regex': searchItem,
+        '$options': 'i'
       }
       }, {
       "brandName.chinese": {
-          '$regex': searchItem,
-          '$options': 'i'
+        '$regex': searchItem,
+        '$options': 'i'
       }
       }, {
       "brandName.english": {
-          '$regex': searchItem,
-          '$options': 'i'
+        '$regex': searchItem,
+        '$options': 'i'
+      }
+      }, {
+      "tags": {
+        $in: [ searchItem ]
+      }
+      }, {
+      "subcategories": {
+        $in: [ searchItem ]
+      }
+      }, {
+      "categories": {
+        $in: [ searchItem ]
       }
       },
     ]
   }
 
   InventoryItem.find(queryObj)
+  .skip(skipNumber)
+  .limit(10)
   // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
   .then(items => {
     // console.log(items);
@@ -277,7 +293,11 @@ router.get('/searchItem',(req,res) =>{
 })
 
 router.get('/popular',(req,res) =>{
-  InventoryItem.find({categories: {$elemMatch: {$in: [ 'Snacks' ]}}})
+  const query = {
+    categories: {$elemMatch: {$in: [ 'Snacks' ]}}, 
+    photos: { $gt: [] }
+  };
+  InventoryItem.find(query)
   .limit(10)
   // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
   .then(items => {
