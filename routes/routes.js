@@ -13,40 +13,40 @@ import _ from 'underscore'
 import Stripe from 'stripe';
 const stripe = Stripe(process.env.STRIPE_API_KEY);
 
-// router.post('/tempUpdate', async (req, res) => {
-//   let user = await User.findById(req.body.userId);
-//   if (user){
-//     const newHash = await bcrypt.hash(req.body.new, saltRounds);
-//     let update = {
-//       password: newHash
-//     }
-//     User.findByIdAndUpdate(req.body.userId, update, { new: true }, 
-//     (err, user) => {
-//       if (err){
-//         console.error(err);
-//         res.json({
-//           success: false,
-//           message: err
-//         })
-//       } else if (!user){
-//         res.json({
-//           success: false,
-//           message: "No such user."
-//         });
-//       } else {
-//         res.json({
-//           success: true,
-//           user: user
-//         })
-//       }
-//     })
-//   } else {
-//     res.json({
-//       success: false,
-//       message: "There was an error."
-//     })
-//   }
-// })
+router.post('/tempUpdate', async (req, res) => {
+  let user = await User.findById(req.body.userId);
+  if (user){
+    const newHash = await bcrypt.hash(req.body.new, saltRounds);
+    let update = {
+      password: newHash
+    }
+    User.findByIdAndUpdate(req.body.userId, update, { new: true }, 
+    (err, user) => {
+      if (err){
+        console.error(err);
+        res.json({
+          success: false,
+          message: err
+        })
+      } else if (!user){
+        res.json({
+          success: false,
+          message: "No such user."
+        });
+      } else {
+        res.json({
+          success: true,
+          user: user
+        })
+      }
+    })
+  } else {
+    res.json({
+      success: false,
+      message: "There was an error."
+    })
+  }
+})
 
 router.get('/inventory', (req, res) => {
   console.log('brand', req.query.brand);
@@ -192,7 +192,7 @@ router.post('/login', async (req, res) => {
             token: jwt.sign(
               userObj,
               process.env.JWT_SECRET,
-              { expiresIn: '1d' })
+              { expiresIn: '7d' })
           })
         } else {
           // passwords don't match, authorization failed
@@ -204,6 +204,18 @@ router.post('/login', async (req, res) => {
       });
     }
   });
+});
+
+router.post('/login/token', async (req, res) => {
+  jwt.verify(req.body.token, process.env.JWT_SECRET, function(err, decoded){
+    if (err){
+      console.log('token has expired')
+      res.json({ success: false, error: 'Token expired.  Please log in again.' })
+    } else {
+      console.log('token is valid!')
+      res.json({ success: true });
+    }
+  })
 });
 
 //SEARCH -- browse specific aisles
@@ -294,11 +306,13 @@ router.get('/searchItem',(req,res) =>{
 
 router.get('/popular',(req,res) =>{
   const query = {
-    categories: {$elemMatch: {$in: [ 'Snacks' ]}}, 
+    categories: {$elemMatch: {$in: [ req.query.category ]}}, 
     photos: { $gt: [] }
   };
+  let skipNumber = parseInt(req.query.skip);
   InventoryItem.find(query)
-  .limit(10)
+  .limit(6)
+  .skip(skipNumber)
   // InventoryItem.find({ $text: { $search: searchItem, $options: 'i' } })
   .then(items => {
     // console.log(items);

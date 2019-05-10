@@ -147,6 +147,29 @@ router.post('/userOrder/one',(req,res)=>{
   })
 })
 
+// get whether the user has ordered before
+router.get('/userOrder/checkhistory',(req,res)=>{ 
+  let userid = req.user._id;
+  Order.find({orderedBy:userid})
+  .limit(1)
+  .then(order =>{
+    console.log('in check history', order);
+    if (order.length > 0){
+      res.json({
+        first_time: false
+      })
+    } else {
+      res.json({
+        first_time: true
+      })
+    }
+  })
+  .catch(err =>{
+    console.log(err)
+    res.json({err})
+  })
+})
+
 //ORDER - save order in database
 router.post('/Order', async (req,res) => {
   console.log('body', req.body, '\n\n');
