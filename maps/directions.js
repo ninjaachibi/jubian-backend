@@ -10,7 +10,7 @@ async function getDirections(rawAddress){
                 to: rawAddress,
             },
         }).then(response => {
-            return response.data.route.distance <=15}, 
+            return response.data.route.distance <=50}, 
                 error => console.error(error));
     return directions;
 }
