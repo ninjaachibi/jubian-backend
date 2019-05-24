@@ -6,7 +6,7 @@ const excelToJson = require('convert-excel-to-json');
 const path = require('path');
 const sharp = require('sharp');
 
-const pathToInventory = './scripts/inventory.xlsx';
+const pathToInventory = './scripts/may23inventory.xlsx';
 
 if (process.argv.length < 3) {
     console.log("Need at least 3 arguments!!!!");
@@ -25,7 +25,7 @@ if (process.argv[2] === 'resize') {
         const minPath = path.join(folder, '../minimized');
         sharp(folder+file) 
         .resize(600, 600) 
-        .toFile(minPath+'/'+file, (err) => {
+        .toFile(minPath+'/'+file.split('.')[0]+'.jpg', (err) => {
           if (err!==null){
             console.error(file, err)
           }
@@ -87,16 +87,18 @@ else if (process.argv[2] === 'parse'){
               }
             } catch (err) {
               if(err.code === 'ENOENT'){
-                console.log('file not found', i);
+                console.log('file not found', item.item_id, i);
               }
             }
           })
         } else {
-          console.log('!!!COULD NOT PARSE SPLIT: ', item.item_id, item.brandName_english)
+          console.log('NO PHOTOS!!!!!!', item.item_id, item.brandName_english, item.productName_english);
+          return;
         }
 
         if (!item.price || item.price.length === 0){
-          console.log('NO ITEM PRICE!!!!!', item.item_id, item.brandName_english);
+          console.log('NO ITEM PRICE!!!!!', item.item_id, item.brandName_english, item.productName_english);
+          return;
         }
         
         return new InventoryItem({

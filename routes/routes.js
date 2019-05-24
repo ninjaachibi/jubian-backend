@@ -220,21 +220,16 @@ router.post('/login/token', async (req, res) => {
 
 //SEARCH -- browse specific aisles
 router.get('/browse', (req,res) => {
-  // let aisle = req.query.aisle;
-  // console.log('aisle', aisle);
-  // GroceryItem.find({aisle})
-  // .then(items => {
-  //   res.json({items})
-  // })
-  // .catch(err => {
-  //   console.log(err);
-  //   res.json({error: err})
-  // })
   let category = req.query.category;
   console.log('category', category);
   let skipNumber = parseInt(req.query.skip);
   InventoryItem
-  .find({ categories: {$elemMatch: {$in: [ category ]}}})
+  .find({ 
+    categories: {$elemMatch: {$in: [ category ]}}, 
+    // photos: {$size: {$gt: 1}},
+    photos : {$exists:true}, 
+    $where:'this.photos.length>0'
+  })
   .skip(skipNumber)
   .limit(10)
   .then(items => {

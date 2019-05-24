@@ -51,4 +51,4 @@ const inventorySchema = new Schema({
   }
 });
 
-export default mongoose.model('InventoryItems2', inventorySchema);
+export default mongoose.model('InventoryItems3', inventorySchema);
