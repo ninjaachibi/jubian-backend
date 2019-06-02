@@ -82,7 +82,7 @@ router.get('/users', (req,res) => {
 router.get('/product', (req, res) => {
   var id = req.query.id;
   console.log('gettig product', id);
-  InventoryItem.findById(id)
+  InventoryItem.findOne({item_id: id})
   .then(item => {
     console.log('item', item);
     res.json( { item });
@@ -220,20 +220,21 @@ router.post('/login/token', async (req, res) => {
 
 //SEARCH -- browse specific aisles
 router.get('/browse', (req,res) => {
-  let category = req.query.category;
-  console.log('category', category);
   let skipNumber = parseInt(req.query.skip);
+
+  let query = { photos: { $exists: true }, $where: 'this.photos.length>0'};
+  query.categories = {$elemMatch: {$in: [ req.query.category ]}};
+  if (req.query.subcategories){
+    query.subcategories = { $elemMatch: {$in: req.query.subcategories.split(";") } }
+    console.log('subcategories', req.query.subcategories);
+  }
+
   InventoryItem
-  .find({ 
-    categories: {$elemMatch: {$in: [ category ]}}, 
-    // photos: {$size: {$gt: 1}},
-    photos : {$exists:true}, 
-    $where:'this.photos.length>0'
-  })
+  .find(query)
   .skip(skipNumber)
   .limit(10)
   .then(items => {
-    // console.log('items', items[0])
+    console.log(req.query.category, req.query.subcategories, skipNumber, items.length)
     res.json({ items })
   })
   .catch(err => {
