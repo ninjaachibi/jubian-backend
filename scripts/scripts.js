@@ -6,7 +6,8 @@ const excelToJson = require('convert-excel-to-json');
 const path = require('path');
 const sharp = require('sharp');
 
-const pathToInventory = './scripts/inventory.xlsx';
+const pathToInventory = './scripts/may30inventory.xlsx';
+const pathToRecipe = './scripts/recipes.xlsx'
 
 if (process.argv.length < 3) {
     console.log("Need at least 3 arguments!!!!");
@@ -25,7 +26,7 @@ if (process.argv[2] === 'resize') {
         const minPath = path.join(folder, '../minimized');
         sharp(folder+file) 
         .resize(600, 600) 
-        .toFile(minPath+'/'+file, (err) => {
+        .toFile(minPath+'/'+file.split('.')[0]+'.jpg', (err) => {
           if (err!==null){
             console.error(file, err)
           }
@@ -33,6 +34,29 @@ if (process.argv[2] === 'resize') {
     });
   });
   // process.exit()
+}
+
+else if (process.argv[2] === 'compare'){
+  const folder = path.join(__dirname, '../../inventory_photos/')
+  fs.readdir(folder, function (err, files) {
+    //handling error
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } 
+    //listing all files using forEach
+    files.forEach(function (file) {
+      if (file === '.DS_Store'){
+        return
+      }
+      let data = fs.readFileSync(path.join(__dirname, '../../minimized/')+file.split('.')[0]+'.jpg');
+      if (file === 'A-ShaHakkaSesameOilScallion-(4Pack)TheNo.1AwardWinningNoodleFromTaiwanGuanmiaoNoodle_1.jpg'){
+        console.log('data', data);
+      }
+      // if (!data){
+      //   console.log('no file', file);
+      // }
+    });
+  });
 }
 
 else if (process.argv[2] === 'parse'){
@@ -46,12 +70,12 @@ else if (process.argv[2] === 'parse'){
         "C": "productName_english",
         "D": "brandName_chinese",
         "E": "productName_chinese",
-        "F": "description",
-        "G": "categories",
-        "H": "subcategories",
-        "I": "tags",
-        "J": "price",
-        "K": "weigh",
+        "F": "quantity",
+        "G": "units",
+        "H": "category",
+        "I": "subcategory",
+        "J": "tags",
+        "K": "price",
         "L": "photos"
     }
   });
@@ -87,16 +111,24 @@ else if (process.argv[2] === 'parse'){
               }
             } catch (err) {
               if(err.code === 'ENOENT'){
-                console.log('file not found', i);
+                console.log('FILE NOT FOUND - ', 'itemid: ', item.item_id, '; jpg link: ', i);
               }
             }
           })
         } else {
-          console.log('!!!COULD NOT PARSE SPLIT: ', item.item_id, item.brandName_english)
+          console.log('NO PHOTOS - ', 
+                      'itemid:', item.item_id, 
+                      '; brandname:', item.brandName_english, 
+                      '; productname: ', item.productName_english);
+          return;
         }
 
         if (!item.price || item.price.length === 0){
-          console.log('NO ITEM PRICE!!!!!', item.item_id, item.brandName_english);
+          console.log('NO ITEM PRICE - ', 
+                      'itemid:', item.item_id, 
+                      '; brandname:', item.brandName_english, 
+                      '; productname: ', item.productName_english);
+          return;
         }
         
         return new InventoryItem({
@@ -109,12 +141,12 @@ else if (process.argv[2] === 'parse'){
             english: item.productName_english,
             chinese: item.productName_chinese,
           },
-          description: item.description,
-          categories: item.categories ? item.categories.split(';') : [],
-          subcategories: item.subcategories ? item.subcategories.split(';') : [],
+          quantity: item.quantity,
+          category: item.category ? item.category.split(';') : [],
+          subcategory: item.subcategory ? item.subcategory.split(';') : [],
           tags: item.tags ? item.tags.split(';') : [],
           price: item.price,
-          weigh: item.weigh,
+          units: item.units,
           photos: photos,
         }).save()
       }))
@@ -127,17 +159,36 @@ else if (process.argv[2] === 'parse'){
   )
 }
 
-else if (process.argv[2] === 'getPhoto') {
-  async function get(){
-    console.log('getting');
-    await InventoryItem.findOne({price: 2.69})
-    .then(item => {
-      console.log('item', item.photos);
-    })
-    console.log('done');
+else if (process.argv[2] === 'recipe') {
+  const result = excelToJson({
+    "source": fs.readFileSync(pathToRecipe),
+    "columnToKey": {
+        "A": "title",
+        "B": "image",
+        "C": "time",
+        "D": "level",
+        "E": "serving",
+        "F": "description",
+        "G": "ingredients",
+        "H": "instructions",
+    }
+  });
+
+  const first_sheet = Object.keys(result)[0];
+  const recipes = result[first_sheet]; 
+  recipes.splice(0,1);
+
+  for (let i in recipes){
+    recipes[i].ingredients = recipes[i].ingredients.split(';');
+    recipes[i].instructions = recipes[i].instructions.split(';');
   }
 
-  get();
+  fs.writeFile('recipes.json', JSON.stringify(recipes), 'utf8', (err)=>{
+    if (err) throw err;
+    console.log('json file saved');
+  });
+
+  // console.log(recipes);
 
 }
 

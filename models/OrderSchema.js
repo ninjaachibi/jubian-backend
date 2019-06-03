@@ -109,11 +109,12 @@ const orderSchema = new Schema({
       product: String,
       brand: String,
       count: Number,
-      itemId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'InventoryItem',
-        required: true,
-      }
+      // itemId: {
+      //   type: mongoose.Schema.Types.ObjectId,
+      //   ref: 'InventoryItem',
+      //   required: true,
+      // }
+      itemId: String
     }
   ],
   status: {
