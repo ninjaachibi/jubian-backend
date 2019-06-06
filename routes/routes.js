@@ -82,9 +82,9 @@ router.get('/users', (req,res) => {
 router.get('/product', (req, res) => {
   var id = req.query.id;
   console.log('gettig product', id);
-  InventoryItem.findOne({item_id: id})
+  InventoryItem.findById(id)
   .then(item => {
-    // console.log('item', item);
+    console.log('item', item);
     res.json( { item });
   })
   .catch(err => {
@@ -220,21 +220,25 @@ router.post('/login/token', async (req, res) => {
 
 //SEARCH -- browse specific aisles
 router.get('/browse', (req,res) => {
+  // let aisle = req.query.aisle;
+  // console.log('aisle', aisle);
+  // GroceryItem.find({aisle})
+  // .then(items => {
+  //   res.json({items})
+  // })
+  // .catch(err => {
+  //   console.log(err);
+  //   res.json({error: err})
+  // })
+  let category = req.query.category;
+  console.log('category', category);
   let skipNumber = parseInt(req.query.skip);
-
-  let query = { photos: { $exists: true }, $where: 'this.photos.length>0'};
-  query.category = {$elemMatch: {$in: [ req.query.category ]}};
-  if (req.query.subcategories){
-    query.subcategory = { $elemMatch: {$in: req.query.subcategories.split(";") } }
-    // console.log('subcategories', req.query.subcategories);
-  }
-
   InventoryItem
-  .find(query)
+  .find({ categories: {$elemMatch: {$in: [ category ]}}})
   .skip(skipNumber)
   .limit(10)
   .then(items => {
-    // console.log(req.query.category, req.query.subcategories, skipNumber, items.length)
+    // console.log('items', items[0])
     res.json({ items })
   })
   .catch(err => {
@@ -302,7 +306,7 @@ router.get('/searchItem',(req,res) =>{
 
 router.get('/popular',(req,res) =>{
   const query = {
-    category: {$elemMatch: {$in: [ req.query.category ]}}, 
+    categories: {$elemMatch: {$in: [ req.query.category ]}}, 
     photos: { $gt: [] }
   };
   let skipNumber = parseInt(req.query.skip);
@@ -320,20 +324,6 @@ router.get('/popular',(req,res) =>{
   })
 })
 
-
-// get recipe ingredients
-router.get('/ingredients', (req,res) => {
-  let ingredients = req.query.ingredients.split(';')
-  console.log('ingredients', ingredients);
-  InventoryItem.find({item_id: { $in: ingredients }})
-  .then(items => {
-    res.json({items})
-  })
-  .catch(err => {
-    console.log(err)
-    res.json({error: err})
-  })
-})
 
 //For stripe payments
 router.post('/payments', function(req, res){
