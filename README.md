@@ -1,8 +1,8 @@
-# Fusion Backend API
+# Jubian Backend API
 
 ![alt text](https://www.seriouseats.com/recipes/images/2012/06/20120629-chichis-chinese-tomato-egg-primary.jpg "Yummy")
 
-Hello, you've come to the right place. This is the backend API for Fusion. Currently, it's hosted on a Heroku Server
+Hello, you've come to the right place. This is the backend API for Jubian. Currently, it's hosted on a Heroku Server
 running somewhere out there. Our backend is also a MongoDB NoSQL backend. But you don't need to worry about that. You're here for 
 our API endpoints.
 
